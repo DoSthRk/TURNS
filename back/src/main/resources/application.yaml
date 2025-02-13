@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  datasource:
+    url: jdbc:mysql://localhost:3306/lumi2024?useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: qianjin
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml  # 使用正确的路径
+
+# 文件上传配置
+file:
+  upload-path: /var/www/uploads/    # Windows路径示例，请根据你的系统修改
+  access-path: http://112.124.67.211/uploads/   # 确保这个URL能访问到上传目录

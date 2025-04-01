@@ -51,7 +51,7 @@ public class LogAspect {
         return result;
     }
 
-    private void saveLog(ProceedingJoinPoint joinPoint, Object result) {
+    private void saveLog(ProceedingJoinPoint joinPoint, long time) {
         try {
             MethodSignature signature = (MethodSignature) joinPoint.getSignature();
             Method method = signature.getMethod();
@@ -77,18 +77,21 @@ public class LogAspect {
                 switch(operationType) {
                     // 普通客资操作
                     case "addCountNormal":
-                        operation = String.format("顾问[%s]: 分配普通客资 %d→%d",
+                        operation = String.format("【%s】顾问[%s]: 分配普通客资 %d→%d",
+                                getTypeDesc(consultants.getType()),
                                 consultants.getName(),
                                 consultants.getCountNormal(),
                                 consultants.getCountNormal() + 1);
                         break;
                     case "skipNormal":
-                        operation = String.format("顾问[%s]: 跳过普通客资 (当前客资数: %d)",
+                        operation = String.format("【%s】顾问[%s]: 跳过普通客资 (当前客资数: %d)",
+                                getTypeDesc(consultants.getType()),
                                 consultants.getName(),
                                 consultants.getCountNormal());
                         break;
                     case "confirmNormal":
-                        operation = String.format("顾问[%s]: 确认普通客资 %d→%d",
+                        operation = String.format("【%s】顾问[%s]: 确认普通客资 %d→%d",
+                                getTypeDesc(consultants.getType()),
                                 consultants.getName(),
                                 consultants.getCountNormal() - 1,
                                 consultants.getCountNormal());
@@ -96,18 +99,21 @@ public class LogAspect {
 
                     // SEM客资操作
                     case "addCountSem":
-                        operation = String.format("顾问[%s]: 分配SEM客资 %d→%d",
+                        operation = String.format("【%s】顾问[%s]: 分配SEM客资 %d→%d",
+                                getTypeDesc(consultants.getType()),
                                 consultants.getName(),
                                 consultants.getCountSem(),
                                 consultants.getCountSem() + 1);
                         break;
                     case "skipSem":
-                        operation = String.format("顾问[%s]: 跳过SEM客资 (当前客资数: %d)",
+                        operation = String.format("【%s】顾问[%s]: 跳过SEM客资 (当前客资数: %d)",
+                                getTypeDesc(consultants.getType()),
                                 consultants.getName(),
                                 consultants.getCountSem());
                         break;
                     case "confirmSem":
-                        operation = String.format("顾问[%s]: 确认SEM客资 %d→%d",
+                        operation = String.format("【%s】顾问[%s]: 确认SEM客资 %d→%d",
+                                getTypeDesc(consultants.getType()),
                                 consultants.getName(),
                                 consultants.getCountSem() - 1,
                                 consultants.getCountSem());
@@ -115,58 +121,164 @@ public class LogAspect {
 
                     // AP/Alevel客资操作
                     case "addCountSingle1":
-                        operation = String.format("顾问[%s]: 分配AP/Alevel客资 %d→%d",
+                        operation = String.format("【%s】顾问[%s]: 分配AP/Alevel客资 %d→%d",
+                                getTypeDesc(consultants.getType()),
                                 consultants.getName(),
                                 consultants.getCountSingle1(),
                                 consultants.getCountSingle1() + 1);
                         break;
                     case "skipSingle1":
-                        operation = String.format("顾问[%s]: 跳过AP/Alevel客资 (当前客资数: %d)",
+                        operation = String.format("【%s】顾问[%s]: 跳过AP/Alevel客资 (当前客资数: %d)",
+                                getTypeDesc(consultants.getType()),
                                 consultants.getName(),
                                 consultants.getCountSingle1());
                         break;
                     case "confirmSingle1":
-                        operation = String.format("顾问[%s]: 确认AP/Alevel客资 %d→%d",
+                        operation = String.format("【%s】顾问[%s]: 确认AP/Alevel客资 %d→%d",
+                                getTypeDesc(consultants.getType()),
                                 consultants.getName(),
                                 consultants.getCountSingle1() - 1,
                                 consultants.getCountSingle1());
                         break;
                     case "restoreSingle1":
-                        operation = String.format("顾问[%s]: 恢复AP/Alevel客资分配状态",
+                        operation = String.format("【%s】顾问[%s]: 恢复AP/Alevel客资分配状态",
+                                getTypeDesc(consultants.getType()),
+                                consultants.getName());
+                        break;
+
+                    // 抖音客资操作
+                    case "addCountDy":
+                        operation = String.format("【抖音/B站国际课程】顾问[%s]: 分配抖音客资 %d→%d",
+                                consultants.getName(),
+                                consultants.getCountSingle1(),
+                                consultants.getCountSingle1() + 1);
+                        break;
+                    case "skipDy":
+                        operation = String.format("【抖音/B站国际课程】顾问[%s]: 跳过抖音客资 (当前客资数: %d)",
+                                consultants.getName(),
+                                consultants.getCountSingle1());
+                        break;
+                    case "confirmDy":
+                        operation = String.format("【抖音/B站国际课程】顾问[%s]: 确认抖音客资 %d→%d",
+                                consultants.getName(),
+                                consultants.getCountSingle1() - 1,
+                                consultants.getCountSingle1());
+                        break;
+                    case "restoreDy":
+                        operation = String.format("【抖音/B站国际课程】顾问[%s]: 恢复抖音客资分配状态",
+                                consultants.getName());
+                        break;
+
+                    // B站申诉客资操作
+                    case "addCountIC":
+                        if (consultants.getType() == 1) {
+                            operation = String.format("【辅导】顾问[%s]: 分配AP/Alevel客资 %d→%d",
+                                    consultants.getName(),
+                                    consultants.getCountSingle1(),
+                                    consultants.getCountSingle1() + 1);
+                        } else {
+                            operation = String.format("【B站申诉】顾问[%s]: 分配B站申诉客资 %d→%d",
+                                    consultants.getName(),
+                                    consultants.getCountSingle1(),
+                                    consultants.getCountSingle1() + 1);
+                        }
+                        break;
+                    case "skipIC":
+                        if (consultants.getType() == 1) {
+                            operation = String.format("【辅导】顾问[%s]: 跳过AP/Alevel客资 (当前客资数: %d)",
+                                    consultants.getName(),
+                                    consultants.getCountSingle1());
+                        } else {
+                            operation = String.format("【B站申诉】顾问[%s]: 跳过B站申诉客资 (当前客资数: %d)",
+                                    consultants.getName(),
+                                    consultants.getCountSingle1());
+                        }
+                        break;
+                    case "confirmIC":
+                        if (consultants.getType() == 1) {
+                            operation = String.format("【辅导】顾问[%s]: 确认AP/Alevel客资 %d→%d",
+                                    consultants.getName(),
+                                    consultants.getCountSingle1() - 1,
+                                    consultants.getCountSingle1());
+                        } else {
+                            operation = String.format("【B站申诉】顾问[%s]: 确认B站申诉客资 %d→%d",
+                                    consultants.getName(),
+                                    consultants.getCountSingle1() - 1,
+                                    consultants.getCountSingle1());
+                        }
+                        break;
+                    case "restoreIC":
+                        if (consultants.getType() == 1) {
+                            operation = String.format("【辅导】顾问[%s]: 恢复AP/Alevel客资分配状态",
+                                    consultants.getName());
+                        } else {
+                            operation = String.format("【B站申诉】顾问[%s]: 恢复B站申诉客资分配状态",
+                                    consultants.getName());
+                        }
+                        break;
+
+                    // 恢复客资操作
+                    case "restoreNormal":
+                        operation = String.format("【%s】顾问[%s]: 恢复普通客资分配状态",
+                                getTypeDesc(consultants.getType()),
+                                consultants.getName());
+                        break;
+                    case "restoreSem":
+                        operation = String.format("【%s】顾问[%s]: 恢复SEM客资分配状态",
+                                getTypeDesc(consultants.getType()),
                                 consultants.getName());
                         break;
 
                     case "updateNormalCount":
-                        operation = String.format("在总表修改顾问[%s]的普通客资为: %d",
+                        operation = String.format("【%s】在总表修改顾问[%s]的普通客资为: %d",
+                                getTypeDesc(consultants.getType()),
                                 consultants.getName(),
                                 consultants.getCountNormal());
                         break;
                     case "updateSemCount":
-                        operation = String.format("在总表修改顾问[%s]的SEM客资为: %d",
+                        operation = String.format("【%s】在总表修改顾问[%s]的SEM客资为: %d",
+                                getTypeDesc(consultants.getType()),
                                 consultants.getName(),
                                 consultants.getCountSem());
                         break;
                     case "updateSingle1Count":
-                        operation = String.format("在总表修改顾问[%s]的AP/Alevel客资为: %d",
+                        operation = String.format("【%s】在总表修改顾问[%s]的AP/Alevel客资为: %d",
+                                getTypeDesc(consultants.getType()),
                                 consultants.getName(),
                                 consultants.getCountSingle1());
                         break;
-                    case "updateStatus":
-                        operation = String.format("在总表修改顾问[%s]状态为: %s",
+                    case "updateDyCount":
+                        operation = String.format("【抖音/B站国际课程】在总表修改顾问[%s]的抖音客资为: %d",
                                 consultants.getName(),
-                                consultants.getStatus() == 1 ? "开始接单" : "停止接单");
+                                consultants.getCountSingle1());
+                        break;
+                    case "updateICCount":
+                        if (consultants.getType() == 1) {
+                            operation = String.format("【辅导】在总表修改顾问[%s]的AP/Alevel客资为: %d",
+                                    consultants.getName(),
+                                    consultants.getCountSingle1());
+                        } else {
+                            operation = String.format("【B站申诉】在总表修改顾问[%s]的B站申诉客资为: %d",
+                                    consultants.getName(),
+                                    consultants.getCountSingle1());
+                        }
+                        break;
+                    case "updateStatus":
+                        operation = String.format("【%s】在总表修改顾问[%s]状态为: %s",
+                                getTypeDesc(consultants.getType()),
+                                consultants.getName(),
+                                getStatusDesc(consultants.getStatus()));
                         break;
                     case "updateComplement":
-                        operation = String.format("补客资分配给[%s]",
+                        operation = String.format("【%s】补客资分配给顾问[%s]",
+                                getTypeDesc(consultants.getType()),
                                 consultants.getName());
-
-                        // 添加调试日志
-                        log.info("顾问状态更新 - 名称: {}, 新状态: {}",
-                                consultants.getName(),
-                                consultants.getStatus());
                         break;
                     default:
-                        operation = "更新数据";
+                        operation = String.format("【%s】顾问[%s]: %s",
+                                getTypeDesc(consultants.getType()),
+                                consultants.getName(),
+                                operationType);
                 }
             } else {
                 Log logAnnotation = method.getAnnotation(Log.class);
@@ -220,5 +332,39 @@ public class LogAspect {
             ip = request.getRemoteAddr();
         }
         return ip;
+    }
+
+    /**
+     * 获取顾问类型描述
+     * @param type 类型编码
+     * @return 类型描述
+     */
+    private String getTypeDesc(Integer type) {
+        if (type == null) return "未知类型";
+        
+        switch (type) {
+            case 1: return "辅导";
+            case 2: return "申诉";
+            case 3: return "抖音/B站国际课程";
+            case 4: return "B站申诉";
+            default: return "未知类型(" + type + ")";
+        }
+    }
+    
+    /**
+     * 获取顾问状态描述
+     * @param status 状态编码
+     * @return 状态描述
+     */
+    private String getStatusDesc(Integer status) {
+        if (status == null) return "未知状态";
+        
+        switch (status) {
+            case 0: return "未分配";
+            case 1: return "开始接单";
+            case 2: return "休息";
+            case 3: return "暂停";
+            default: return "未知状态(" + status + ")";
+        }
     }
 }

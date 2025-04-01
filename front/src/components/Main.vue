@@ -36,6 +36,11 @@
             <i class="el-icon-magic-stick"></i>
             <span class="menu-item">申诉知识</span>
           </el-menu-item>
+          <el-menu-item index="compensation">
+            <i class="el-icon-s-order"></i>
+            <span class="menu-item">待补客资</span>
+          </el-menu-item>
+
         </el-menu>
         <div class="profile-menu">
           <el-dropdown>
@@ -106,7 +111,10 @@ import TodoList from './TodoList.vue'
 import LogList from './LogList.vue'
 import SyncDoc from './SyncDoc.vue'
 import Games from './Games.vue'
+import CompensationList from './CompensationList.vue'
+
 import request from '@/utils/request';
+
 
 export default {
   name: 'Main',
@@ -118,7 +126,9 @@ export default {
     TodoList,
     LogList,
     SyncDoc,
-    Games
+    Games,
+    CompensationList,
+
   },
   data() {
     // 密码确认验证
@@ -194,6 +204,10 @@ export default {
         case '9':
           this.currentComponent = 'Games';
           break;
+        case 'compensation':
+          this.currentComponent = 'CompensationList';
+          break;
+       
       }
     },
     // 修改密码

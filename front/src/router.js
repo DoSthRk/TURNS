@@ -9,6 +9,8 @@ import Schedule from './components/Schedule.vue';
 import LogList from './components/LogList.vue';
 import Games from './components/Games.vue';
 import { Message } from 'element-ui';
+import CompensationList from './components/CompensationList.vue';
+
 
 Vue.use(Router);
 
@@ -19,7 +21,7 @@ const router = new Router({
       path: '/logList',
       name: 'LogList',
       component: LogList,
-      meta: { requiresAuth: true, requiresAdmin: true }
+      meta: { requiresAuth: true }
     },
     {
       path: '/login',
@@ -51,6 +53,13 @@ const router = new Router({
       meta: { requiresAuth: true }
     },
     {
+      path: '/compensation',
+      name: 'CompensationList',
+      component: CompensationList,
+      meta: { requiresAuth: true }
+    },
+   
+    {
       path: '*',
       redirect: '/login'
     }
@@ -67,13 +76,6 @@ router.beforeEach((to, from, next) => {
         path: '/login',
         query: { redirect: to.fullPath }
       });
-    } else if (to.matched.some(record => record.meta.requiresAdmin)) {
-      if (userRole !== 'admin') {
-        Message.error('无权限访问该页面');
-        next(false);
-      } else {
-        next();
-      }
     } else {
       next();
     }

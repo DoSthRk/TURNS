@@ -7,7 +7,7 @@ import router from '@/router'  // 导入路由
 
 // 创建 axios 实例
 const service = axios.create({
-  baseURL: process.env.VUE_APP_BASE_API || 'http://112.124.67.211:8080',
+  baseURL: process.env.VUE_APP_BASE_API || 'http://123.60.65.25:8080',
   timeout: 50000,  // 已经是50秒
   // 添加重试机制
   retry: 3,  // 重试次数
@@ -17,6 +17,9 @@ const service = axios.create({
     return error.code === 'ECONNABORTED' || 
            error.message.includes('timeout') ||
            error.message.includes('Network Error');
+  },
+  headers: {
+    'Content-Type': 'application/json',
   }
 })
 
@@ -32,6 +35,10 @@ service.interceptors.request.use(
       if (token) {
         config.headers['Authorization'] = 'Bearer ' + token
       }
+    }
+    // 添加时间戳防止缓存
+    if (config.method === 'get') {
+      config.params = { ...config.params, _t: new Date().getTime() }
     }
     return config
   },
@@ -72,18 +79,11 @@ service.interceptors.response.use(undefined, async (err) => {
 // 响应拦截器
 service.interceptors.response.use(
   response => {
-    // 检查特定的错误码
-    const errorCodes = [401, 403]
+    // 只检查 401 错误码
     if (response.data && (
-      errorCodes.includes(response.data.code) || 
+      response.data.code === 401 || 
       response.data.message?.toLowerCase().includes('jwt')
     )) {
-      // 如果是权限不足（403）且不在白名单中，只提示无权限
-      if (response.data.code === 403 && !whiteList.includes(response.config.url)) {
-        Message.error('无权限访问')
-        return Promise.reject(new Error('No permission'))
-      }
-      // 其他情况按认证失败处理
       handleAuthError()
       return Promise.reject(new Error('Authentication failed'))
     }
@@ -91,6 +91,7 @@ service.interceptors.response.use(
   },
   error => {
     if (error.response) {
+      console.error('Error response:', error.response.status, error.response.data);
       switch (error.response.status) {
         case 401:
           // 只有非白名单路径才提示登录失效
@@ -100,13 +101,15 @@ service.interceptors.response.use(
             Message.error('登录已失效，请重新登录')
           }
           break
-        case 403:
-          // 权限不足时只提示无权限
-          Message.error('无权限访问')
-          break
         default:
-          Message.error(error.response.data.message || '请求失败')
+          Message.error(error.response.data.message || error.response.data.msg || '请求失败')
       }
+    } else if (error.request) {
+      console.error('Error request (no response):', error.request);
+      Message.error('服务器未响应，请检查网络连接')
+    } else {
+      console.error('Error setting up request:', error.message);
+      Message.error('请求设置错误: ' + error.message)
     }
     return Promise.reject(error)
   }

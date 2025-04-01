@@ -39,7 +39,7 @@
 
     <el-table
       v-loading="loading"
-      :data="filteredLogs"
+      :data="paginatedLogs"
       style="width: 100%"
       border
       stripe
@@ -69,6 +69,19 @@
         </template>
       </el-table-column>
     </el-table>
+
+    <div class="pagination-container">
+      <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="currentPage"
+        :page-sizes="[10, 20, 50, 100]"
+        :page-size="pageSize"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="filteredLogs.length"
+      >
+      </el-pagination>
+    </div>
 
     <el-dialog
       :visible.sync="dialogVisible"
@@ -142,7 +155,9 @@ export default {
             return [start, end]
           }
         }
-      ]
+      ],
+      currentPage: 1,
+      pageSize: 20
     }
   },
   computed: {
@@ -168,6 +183,11 @@ export default {
         
         return matchAccount && matchModule && matchDate
       })
+    },
+    paginatedLogs() {
+      const start = (this.currentPage - 1) * this.pageSize;
+      const end = start + this.pageSize;
+      return this.filteredLogs.slice(start, end);
     }
   },
   methods: {
@@ -239,6 +259,13 @@ export default {
       } catch (e) {
         return log.operation
       }
+    },
+    handleSizeChange(val) {
+      this.pageSize = val;
+      this.currentPage = 1; // 切换每页显示数量时重置到第一页
+    },
+    handleCurrentChange(val) {
+      this.currentPage = val;
     }
   },
   mounted() {
@@ -290,5 +317,11 @@ pre {
 .el-table .operation-cell {
   white-space: pre-wrap;
   word-break: break-all;
+}
+
+.pagination-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 </style>

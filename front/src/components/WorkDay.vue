@@ -1,171 +1,143 @@
 <template>
-    <el-tabs type="border-card">
-      <el-tab-pane label="轮班" class="turn">
-        <el-button
-      :type="selectedType === 1 ? 'primary' : 'primary'"
-      @click="selectType(1)"
-      class="type-button"
-    >
-      辅导
-    </el-button>
-    <el-button
-      :type="selectedType === 2 ? 'warning' : 'warning'"
-      @click="selectType(2)"
-      class="type-button"
-    >
-      申诉
-    </el-button>
-    
-     <!-- 显示选择类型的内容 -->
-     <el-col>
-    <div>
-      <h1 style="font-size: 100px;">
-        {{ selectedType === 1 ? '辅导' : '申诉' }}
-      </h1>
-    </div>
-  </el-col>
-
-  <!-- 辅导相关表格 -->
-  <template v-if="selectedType === 1">
-    <div v-if="hasComplementType1">
-      <h1 style="font-size: 100px;">正在补客资</h1>
-    </div>
-    <template v-else>
-      <!-- 辅导表格 -->
-      <el-table :data="normalTableData" class="normalTable">
-        <el-table-column prop="name" label="官号"></el-table-column>
-        <el-table-column>
-          <template slot-scope="scope">
-            <div v-if="scope.row.orderStatusNormal === 0">
-              
-                <el-button slot="reference" type="success" @click="restoreConsultantNormal(scope.row)">补</el-button>
-             
-            </div>
-            <div v-else>
-              <el-button @click="addCountNormal(scope.row)" type="success">分配</el-button>
-              <el-button type="danger" @click="skipNormal(scope.row)">跳过</el-button>
-              <el-button v-if="scope.row.waitingNormal === 1" type="info" @click="confirmNormal(scope.row)">
-                已@，等回复
-              </el-button>
-            </div>
-          </template>
-        </el-table-column>
-        <el-table-column prop="countNormal" label="客资" width="150"></el-table-column>
-      </el-table>
+  <el-tabs type="border-card">
+    <el-tab-pane label="轮班" class="turn">
+      <!-- 类型选择按钮组 -->
+      <el-button
+        :type="selectedType === 1 ? 'primary' : 'primary'"
+        @click="selectType(1)"
+        class="type-button"
+      >
+        辅导
+      </el-button>
+      <el-button
+        :type="selectedType === 2 ? 'warning' : 'warning'"
+        @click="selectType(2)"
+        class="type-button"
+      >
+        申诉
+      </el-button>
+      <el-button
+        :type="selectedType === 3 ? 'primary' : 'success'"
+        @click="selectType(3)"
+        class="type-button"
+      >
+        抖音/B站国际课程
+      </el-button>
+      <el-button
+        :type="selectedType === 4 ? 'primary' : 'success'"
+        @click="selectType(4)"
+        class="type-button"
+      >
+        B站申诉
+      </el-button>
       
+      <!-- 显示选择类型的内容 -->
+      <el-col>
+        <div class="title-section">
+          <h1 style="font-size: 100px;">
+            {{ 
+              selectedType === 1 ? 
+                (hasComplementType1 ? '辅导正在补客资' : '辅导') : 
+              selectedType === 2 ? 
+                (hasComplementType2 ? '申诉正在补客资' : '申诉') : 
+              selectedType === 3 ? '抖音/B站国际课程' : 'B站申诉'
+            }}
+          </h1>
+          <!-- 修改休息/暂停顾问显示 -->
+          <div class="inactive-consultants-container">
+            <div 
+              class="inactive-consultants" 
+              v-if="inactiveConsultants.length > 0"
+            >
+              <div 
+                v-for="consultant in inactiveConsultants" 
+                :key="consultant.id"
+                :class="{'pause-status': consultant.status === 3, 'rest-status': consultant.status === 2}"
+              >
+                <span class="consultant-status">
+                  {{ consultant.name }}{{ consultant.status === 2 ? '正在休息' : '正在暂停' }}{{ consultant.status === 3 && consultant.description ? ': ' + consultant.description : '' }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </el-col>
+
+      <!-- 辅导和申诉相关表格 -->
+      <template v-if="selectedType !== 3 && selectedType !== 4">
+        <template>
+          <!-- 官号表格 -->
+          <el-table :data="normalTableData" class="normalTable">
+            <el-table-column prop="name" label="官号"></el-table-column>
+            <el-table-column>
+              <template slot-scope="scope">
+                <div v-if="scope.row.orderStatusNormal === 0">
+                  <el-button slot="reference" type="success" @click="restoreConsultantNormal(scope.row)">补</el-button>
+                </div>
+                <div v-else>
+                  <el-button @click="addCountNormal(scope.row)" type="success">分配</el-button>
+                  <el-button type="danger" @click="skipNormal(scope.row)">跳过</el-button>
+                  <el-button v-if="scope.row.waitingNormal === 1" type="info" @click="confirmNormal(scope.row)">
+                    已@，等回复
+                  </el-button>
+                </div>
+              </template>
+            </el-table-column>
+            <el-table-column prop="countNormal" label="客资" width="150"></el-table-column>
+          </el-table>
+          
+          <el-divider><i class="el-icon-paperclip"></i></el-divider>
+          
+          <!-- SEM表格 -->
+          <el-table :data="semTableData">
+            <el-table-column prop="name" label="SEM"></el-table-column>
+            <el-table-column>
+              <template slot-scope="scope">
+                <div v-if="scope.row.orderStatusSem === 0">
+                  <el-button slot="reference" type="success" @click="restoreConsultantSem(scope.row)">补</el-button>
+                </div>
+                <div v-else>
+                  <el-button @click="addCountSem(scope.row)" type="success">分配</el-button>
+                  <el-button type="danger" @click="skipSem(scope.row)">跳过</el-button>
+                  <el-button v-if="scope.row.waitingSem === 1" type="info" @click="confirmSem(scope.row)">
+                    已@，等回复
+                  </el-button>
+                </div>
+              </template>
+            </el-table-column>
+            <el-table-column prop="countSem" label="客资" width="150"></el-table-column>
+          </el-table>
+        </template>
+      </template>
       <el-divider><i class="el-icon-paperclip"></i></el-divider>
-      
-      <!-- SEM表格 -->
-      <el-table :data="semTableData">
-        <el-table-column prop="name" label="SEM"></el-table-column>
-        <el-table-column>
-          <template slot-scope="scope">
-            <div v-if="scope.row.orderStatusSem === 0">
-              <el-button slot="reference" type="success" @click="restoreConsultantSem(scope.row)">补</el-button>
-            </div>
-            <div v-else>
-              <el-button @click="addCountSem(scope.row)" type="success">分配</el-button>
-              <el-button type="danger" @click="skipSem(scope.row)">跳过</el-button>
-              <el-button v-if="scope.row.waitingSem === 1" type="info" @click="confirmSem(scope.row)">
-                已@，等回复
-              </el-button>
-            </div>
-          </template>
-        </el-table-column>
-        <el-table-column prop="countSem" label="客资" width="150">
-         
-        </el-table-column>
-        
-      </el-table>
-      
-      <el-divider><i class="el-icon-paperclip"></i></el-divider>
-      
-      <!-- AP/Alevel表格 -->
-      <el-table :data="single1TableData">
-        <el-table-column prop="name" label="AP/Alevel"></el-table-column>
-        <el-table-column>
-          <template slot-scope="scope">
-            <div v-if="scope.row.orderStatusSingle1 === 0">
-              
-                <el-button slot="reference" type="success" @click="restoreConsultantSingle1(scope.row)">补</el-button>
-         
-            </div>
-            <div v-else>
-              <el-button @click="addCountSingle1(scope.row)" type="success">分配</el-button>
-              <el-button type="danger" @click="skipSingle1(scope.row)">跳过</el-button>
-              <el-button v-if="scope.row.waitingSingle1 === 1" type="info" @click="confirmSingle1(scope.row)">
-                已@，等回复
-              </el-button>
-            </div>
-          </template>
-        </el-table-column>
-        <el-table-column prop="countSingle1" label="客资" width="150">
-       
-        </el-table-column>
-      </el-table>
-    </template>
-  </template>
-
-  <!-- 申诉相关表格 -->
-  <template v-if="selectedType === 2">
-    <div v-if="hasComplementType2">
-      <h1 style="font-size: 100px;">正在补客资</h1>
-    </div>
-    <template v-else>
-      <!-- 官号表格 -->
-      <el-table :data="normalTableData" class="normalTable">
-        <el-table-column prop="name" label="官号"></el-table-column>
-        <el-table-column>
-          <template slot-scope="scope">
-            <div v-if="scope.row.orderStatusNormal === 0">
-              <el-button slot="reference" type="success" @click="restoreConsultantNormal(scope.row)">补</el-button>
-            </div>
-            <div v-else>
-              <el-button @click="addCountNormal(scope.row)" type="success">分配</el-button>
-              <el-button type="danger" @click="skipNormal(scope.row)">跳过</el-button>
-              <el-button v-if="scope.row.waitingNormal === 1" type="info" @click="confirmNormal(scope.row)">
-                已@，等回复
-              </el-button>
-            </div>
-          </template>
-        </el-table-column>
-        <el-table-column prop="countNormal" label="客资" width="150"></el-table-column>
-      </el-table>
-
-      <el-divider><i class="el-icon-paperclip"></i></el-divider>
-
-      <!-- SEM表格 -->
-      <el-table :data="semTableData">
-        <el-table-column prop="name" label="SEM"></el-table-column>
-        <el-table-column>
-          <template slot-scope="scope">
-            <div v-if="scope.row.orderStatusSem === 0">
-              <el-button slot="reference" type="success" @click="restoreConsultantSem(scope.row)">补</el-button>
-            </div>
-            <div v-else>
-              <el-button @click="addCountSem(scope.row)" type="success">分配</el-button>
-              <el-button type="danger" @click="skipSem(scope.row)">跳过</el-button>
-              <el-button v-if="scope.row.waitingSem === 1" type="info" @click="confirmSem(scope.row)">
-                已@，等回复
-              </el-button>
-            </div>
-          </template>
-        </el-table-column>
-        <el-table-column prop="countSem" label="客资" width="150"></el-table-column>
-      </el-table>
-    </template>
-  </template>
+      <!-- AP/Alevel客资表格，在type=1, 3, 4时显示 -->
+      <template v-if="selectedType === 3 || selectedType === 4 || selectedType === 1">
+        <el-table :data="single1TableData">
+          <el-table-column prop="name" :label="getSingle1Label()"></el-table-column>
+          <el-table-column>
+            <template slot-scope="scope">
+              <div v-if="scope.row.orderStatusSingle1 === 0">
+                <el-button slot="reference" type="success" @click="selectedType === 3 ? restoreConsultantDy(scope.row) : restoreConsultantIC(scope.row)">补</el-button>
+              </div>
+              <div v-else>
+                <el-button @click="selectedType === 3 ? addCountDy(scope.row) : addCountIC(scope.row)" type="success">分配</el-button>
+                <el-button type="danger" @click="selectedType === 3 ? skipDy(scope.row) : skipIC(scope.row)">跳过</el-button>
+                <el-button v-if="scope.row.waitingSingle1 === 1" type="info" @click="selectedType === 3 ? confirmDy(scope.row) : confirmIC(scope.row)">
+                  已@，等回复
+                </el-button>
+              </div>
+            </template>
+          </el-table-column>
+          <el-table-column prop="countSingle1" label="客资" width="150"></el-table-column>
+        </el-table>
+      </template>
 
     </el-tab-pane>
     
     <el-tab-pane label="总表">
       <Info ref="infoData" @data-loaded="updateData"></Info>
     </el-tab-pane>
-
-
-</el-tabs>
-
-  
+  </el-tabs>
 </template>
 
 <script>
@@ -216,6 +188,13 @@ export default {
     }
   },
   computed:{
+    // 获取当前类型下所有休息或暂停的顾问
+    inactiveConsultants() {
+      return this.consultant.filter(c => 
+        c.type === this.selectedType && 
+        (c.status === 2 || c.status === 3)
+      ).sort((a, b) => b.status - a.status); // 暂停的排在前面
+    }
   },
   mounted() {
     this.show();
@@ -315,6 +294,16 @@ addCountSingle1(consultant) {
   this.updateConsultant(consultant, 'addCountSingle1');
   this.updateSingle1TableData();
 },
+addCountDy(consultant) {
+  consultant.waitingSingle1 = 1;
+  this.updateConsultant(consultant, 'addCountDy');
+  this.updateSingle1TableData();
+},
+addCountIC(consultant) {
+  consultant.waitingSingle1 = 1;
+  this.updateConsultant(consultant, 'addCountIC');
+  this.updateSingle1TableData();
+},
 reduceCountSingle1(consultant){
   consultant.countSingle1-=1;
   this.updateConsultant(consultant)
@@ -326,6 +315,14 @@ this.updateConsultant(consultant);
 reduceCountSem(consultant){
 consultant.countSem -= 1;
 this.updateConsultant(consultant);
+},
+reduceCountDy(consultant){
+  consultant.countSingle1 -= 1;
+  this.updateConsultant(consultant, 'updateDyCount');
+},
+reduceCountIC(consultant){
+  consultant.countSingle1 -= 1;
+  this.updateConsultant(consultant, 'updateICCount');
 },
 updateSemTableData(){
   const skippedConsultants = this.consultant.filter(c => 
@@ -461,6 +458,18 @@ restoreConsultantSingle1(consultant) {
   this.updateConsultant(consultant, 'restoreSingle1');
   this.updateSingle1TableData();
 },
+restoreConsultantDy(consultant) {
+  consultant.orderStatusSingle1 = 1;
+  consultant.waitingSingle1 = 1;  // 添加这行，设置waiting状态为1
+  this.updateConsultant(consultant, 'restoreDy');
+  this.updateSingle1TableData();
+},
+restoreConsultantIC(consultant) {
+  consultant.orderStatusSingle1 = 1;
+  consultant.waitingSingle1 = 1;  // 添加这行，设置waiting状态为1
+  this.updateConsultant(consultant, 'restoreIC');
+  this.updateSingle1TableData();
+},
 
 
 updateConsultant(consultant, operationType) {
@@ -474,7 +483,20 @@ updateConsultant(consultant, operationType) {
   })
   .then(response => {
     if (response.data.code === 200) {
-      this.$message.success('更新成功');
+      // 根据操作类型显示更具体的成功信息
+      let successMessage = '更新成功';
+      if (operationType) {
+        if (operationType.includes('add')) {
+          successMessage = '分配客资成功';
+        } else if (operationType.includes('skip')) {
+          successMessage = '跳过客资成功';
+        } else if (operationType.includes('confirm')) {
+          successMessage = '确认客资成功';
+        } else if (operationType.includes('restore')) {
+          successMessage = '恢复分配状态成功';
+        }
+      }
+      this.$message.success(successMessage);
     } else {
       this.$message.error(response.data.msg || '更新失败');
     }
@@ -497,17 +519,17 @@ this.filteredConsultantsBySingle1=[...this.consultant];
 // 根据 selectedType 过滤数据
 this.filteredConsultantsByNormal = this.consultant.filter(consultant => 
   consultant.type === parseInt(this.selectedType) && 
-  consultant.status !== 0 &&
+  consultant.status === 1 &&
   consultant.waitingNormal !== 1
 );
 this.filteredConsultantsBySem = this.consultant.filter(consultant => 
   consultant.type === parseInt(this.selectedType) && 
-  consultant.status !== 0 &&
+  consultant.status === 1 &&
   consultant.waitingSem !== 1
 );
 this.filteredConsultantsBySingle1=this.consultant.filter(consultant => 
   consultant.type === parseInt(this.selectedType) && 
-  consultant.status !== 0 &&
+  consultant.status === 1 &&
   consultant.waitingSingle1 !== 1
 );
 }
@@ -572,7 +594,7 @@ return data.sort((a, b) => {
 if (a[countField] !== b[countField]) {
 return a[countField] - b[countField];  // 按照指定字段排序
 }
-return a.id - b.id; 
+return a.sortOrder - b.sortOrder; 
 });
 },
 
@@ -592,6 +614,18 @@ skipSingle1(consultant) {
   consultant.orderStatusSingle1 = 0;
   consultant.waitingSingle1 = 0;
   this.updateConsultant(consultant, 'skipSingle1');
+  this.updateSingle1TableData();
+},
+skipDy(consultant) {
+  consultant.orderStatusSingle1 = 0;
+  consultant.waitingSingle1 = 0;
+  this.updateConsultant(consultant, 'skipDy');
+  this.updateSingle1TableData();
+},
+skipIC(consultant) {
+  consultant.orderStatusSingle1 = 0;
+  consultant.waitingSingle1 = 0;
+  this.updateConsultant(consultant, 'skipIC');
   this.updateSingle1TableData();
 },
 
@@ -621,6 +655,18 @@ confirmSingle1(consultant) {
   consultant.waitingSingle1 = 0;
   consultant.countSingle1 += 1;
   this.updateConsultant(consultant, 'confirmSingle1');
+  this.updateSingle1TableData();
+},
+confirmDy(consultant) {
+  consultant.waitingSingle1 = 0;
+  consultant.countSingle1 += 1;
+  this.updateConsultant(consultant, 'confirmDy');
+  this.updateSingle1TableData();
+},
+confirmIC(consultant) {
+  consultant.waitingSingle1 = 0;
+  consultant.countSingle1 += 1;
+  this.updateConsultant(consultant, 'confirmIC');
   this.updateSingle1TableData();
 },
 
@@ -701,7 +747,17 @@ confirmSingle1(consultant) {
     }
   },
 
-  }
+  // 获取Single1表格标题的方法
+  getSingle1Label() {
+    if (this.selectedType === 3) {
+      return '抖音/B站国际课程';
+    } else if (this.selectedType === 4) {
+      return 'B站申诉';
+    } else {
+      return 'AP/Alevel客资';
+    }
+  },
+}
 }
 </script>
 
@@ -740,4 +796,43 @@ confirmSingle1(consultant) {
   color: #e6a23c !important;
 }
 
+/* 修改标题区域样式 */
+.title-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;  /* 改为两端对齐 */
+  gap: 20px;
+  position: relative;  /* 添加相对定位 */
+}
+
+/* 休息/暂停顾问容器样式 */
+.inactive-consultants-container {
+  position: absolute;  /* 绝对定位 */
+  right: 50px;        /* 距离右侧50px */
+  top: 20px;          /* 距离顶部20px */
+}
+
+/* 休息/暂停顾问显示样式 */
+.inactive-consultants {
+  margin-top: 10px;
+  font-size: 24px;  /* 增大字体 */
+  text-align: right;
+}
+
+/* 顾问状态文字样式 */
+.consultant-status {
+  font-weight: bold;
+  line-height: 1.5;
+  display: block;
+}
+
+.pause-status {
+  color: #F56C6C;  /* 红色 */
+  margin-bottom: 10px;
+}
+
+.rest-status {
+  color: #909399;  /* 灰色 */
+  margin-bottom: 10px;
+}
 </style>

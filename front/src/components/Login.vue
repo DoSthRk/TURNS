@@ -87,7 +87,17 @@ export default {
         })
         .catch(error => {
           console.error('登录失败:', error);
-          this.$message.error('登录失败，请稍后重试');
+          if (error.response) {
+            // 服务器返回了错误响应
+            const errorMsg = error.response.data.msg || error.response.data.message || '服务器错误';
+            this.$message.error(`登录失败: ${errorMsg}`);
+          } else if (error.request) {
+            // 请求发送了但没有收到响应
+            this.$message.error('无法连接到服务器，请检查网络');
+          } else {
+            // 设置请求时发生了错误
+            this.$message.error(error.message || '登录失败，请稍后重试');
+          }
         });
     },
     goToRegister() {

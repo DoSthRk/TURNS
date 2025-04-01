@@ -29,11 +29,6 @@ public class LogController {
         if (token != null && token.startsWith("Bearer ")) {
             token = token.substring(7);
             if (JwtUtil.validateToken(token)) {
-                String account = JwtUtil.getAccountFromToken(token);
-                User user = userService.getUserByAccount(account);
-                if (!"admin".equals(user.getRole())) {
-                    return new Result<>(403, "无权限", null);
-                }
                 return new Result<>(200, "获取成功", operationLogMapper.selectList());
             }
         }

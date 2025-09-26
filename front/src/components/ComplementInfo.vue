@@ -18,10 +18,25 @@
         >
           申诉
         </el-button>
+        <!-- <el-button
+          
+          class="type-button"
+          @click="selectedType(3)"
+        >
+          AP
+          
+        </el-button> -->
       </el-button-group>
       
       <!-- 右侧按钮组 -->
       <div class="right-buttons">
+<!-- 
+        <el-button 
+        @click="handleAddAP">
+          新增AP
+        </el-button> -->
+
+
         <el-popconfirm
           :title="`确定要清空所有${selectedType === 1 ? '辅导' : '申诉'}数据吗？`"
           @confirm="removeAllByType(selectedType)"
@@ -60,9 +75,35 @@
       </el-form>
     </el-dialog>
 
+        <!-- 新增对话框 -->
+        <el-dialog :visible.sync="dialogVisibleAp" title="新增AP补客资">
+      <el-form :model="formData" ref="form">
+        <el-form-item label="粘贴名单">
+          <el-input
+            type="textarea"
+            v-model="formData.names"
+            :rows="5"
+            placeholder="请粘贴社群名单，每行一个名字"
+          ></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="checkMatch">匹配社群</el-button>
+          <el-button type="success" @click="submitFormAp" :disabled="!canSubmit">确认添加</el-button>
+        </el-form-item>
+      </el-form>
+    </el-dialog>
+
     <div>
       <h1 style="font-size: 100px;">
-      {{ selectedType === 1 ? '辅导' : '申诉' }}
+        {{ 
+  selectedType === 1 
+    ? '辅导' 
+    : selectedType === 2 
+      ? '申诉' 
+      : selectedType === 3 
+        ? 'AP' 
+        : '' 
+}}
     </h1>
     </div>
   
@@ -102,6 +143,7 @@ export default {
     data() {
         return{
           dialogVisible: false,
+          dialogVisibleAp: false,
           selectedConsultants: [], // 选中的顾问ID数组
           allConsultants: [],     // 所有可选的顾问
           formData: {
@@ -213,58 +255,68 @@ export default {
       this.dialogVisible = true
       this.getAllConsultants() // 打开对话框时获取最新的顾问列表
     },
+    handleAddAP() {
+      console.log('打开新增对话框')
+      this.dialogVisibleAp = true
+      this.getAllConsultants()
+    },
 
     // 检查匹配
-    checkMatch() {
-      if (!this.formData.names.trim()) {
-        Message.warning('请粘贴顾问名单')
-        return
-      }
+checkMatch() {
+  if (!this.formData.names.trim()) {
+    Message.warning('请粘贴顾问名单')
+    return
+  }
 
-      const names = this.formData.names.split('\n')
-        .map(name => name.trim())
-        .filter(name => name)
+  const names = this.formData.names.split('\n')
+    .map(name => name.trim())
+    .filter(name => name)
 
-      const selectedData = []
-      const notFound = []
+  const selectedData = []
+  const notFound = []
 
-      names.forEach((name, index) => {
-        // 提取数字
-        const numbers = name.match(/\d+/g)
-        if (numbers) {
-          const number = numbers[0]
-          
-          // 在顾问列表中查找匹配的顾问
-          const consultant = this.allConsultants.find(c => c.name.includes(number))
-          
-          if (consultant) {
-            console.log(`匹配到顾问: ${consultant.name}, type: ${consultant.type}`)
-            selectedData.push({
-              id: consultant.id,
-              name: consultant.name,
-              type: consultant.type,
-              waiting: 0,
-              displayId: `${consultant.id}_${index}`  // 添加一个显示用的唯一标识
-            })
-          } else {
-            notFound.push(name)
-          }
-        } else {
-          notFound.push(name)
-        }
+  names.forEach((name, index) => {
+    const numbers = name.match(/\d+/g)
+    let consultant = null
+
+    if (numbers) {
+      const number = numbers[0]
+      consultant = this.allConsultants.find(c => 
+        c.name.includes(number) || c.id === number
+      )
+    }
+
+    if (!consultant) {
+      consultant = this.allConsultants.find(c => c.name === name)
+        || this.allConsultants.find(c => c.name.includes(name))
+    }
+
+    if (consultant) {
+      console.log(`匹配到顾问: ${consultant.name}, type: ${consultant.type}`)
+      selectedData.push({
+        id: consultant.id,
+        name: consultant.name,
+        type: consultant.type,
+        waiting: 0,
+        displayId: `${consultant.id}_${index}`
       })
+    } else {
+      notFound.push(name)
+    }
+  })
 
-      if (notFound.length > 0) {
-        Message.warning(`以下顾问未找到：${notFound.join(', ')}`)
-        this.canSubmit = false
-      } else {
-        Message.success(`成功匹配 ${selectedData.length} 个顾问`)
-        this.matchedData = selectedData
-        this.canSubmit = true
-      }
+  this.matchedData = selectedData
 
-      console.log('最终匹配结果:', selectedData)
-    },
+  if (notFound.length > 0) {
+    Message.warning(`以下顾问未找到：${notFound.join(', ')}`)
+    this.canSubmit = false
+  } else {
+    Message.success(`成功匹配 ${selectedData.length} 个顾问`)
+    this.canSubmit = true
+  }
+
+  console.log('最终匹配结果:', selectedData)
+},
 
     // 提交表单
     async submitForm() {
@@ -290,6 +342,34 @@ export default {
         Message.error('添加失败')
       }
     },
+    async submitFormAp() {
+      if (!this.matchedData.length) {
+        Message.warning('请先匹配顾问')
+        return
+      }
+      this.matchedData = this.matchedData.map(item => {
+        item.type = 3;
+        return item;
+      });
+
+      try {
+        const res = await request.post('/addComplement', this.matchedData)
+        if (res.data.code === 200) {
+          Message.success('添加成功')
+          this.dialogVisible = false
+          this.formData.names = ''
+          this.canSubmit = false
+          this.matchedData = []
+          this.show()
+        } else {
+          Message.error(res.data.msg || '添加失败')
+        }
+      } catch (error) {
+        console.error('添加失败:', error)
+        Message.error('添加失败')
+      }
+    },
+    
         show(){
             request.get('/complement')
             .then(res=>{

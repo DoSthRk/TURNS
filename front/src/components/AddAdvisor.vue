@@ -12,8 +12,16 @@
           <el-select v-model="form.type" placeholder="请选择顾问类型">
             <el-option label="辅导" :value="1"></el-option>
             <el-option label="申诉" :value="2"></el-option>
-            <el-option label="抖音/B站国际课程" :value="3"></el-option>
-            <el-option label="B站申诉" :value="4"></el-option>
+            <el-option label="国际课程" :value="4"></el-option>
+            <el-option label="推月申诉" :value="3"></el-option>
+            <el-option label="推月辅导" :value="5"></el-option>
+            <el-option label="汇诺辅导" :value="6"></el-option>
+            <el-option label="汇诺申诉" :value="7"></el-option>
+            <el-option label="智云辅导" :value="8"></el-option>
+            <el-option label="留学堂辅导" :value="9"></el-option>
+            <el-option label="留学堂申诉" :value="12"></el-option>
+            <el-option label="集好家辅导" :value="10"></el-option>
+            <el-option label="集好家申诉" :value="11"></el-option>
           </el-select>
         </el-form-item>
         <el-form-item label="顾问姓名" prop="name">

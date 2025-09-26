@@ -4,8 +4,16 @@
       <el-select v-model="selectedType" @change="filterConsultants" placeholder="选择类型" class="type-select">
         <el-option label="辅导" value="1"></el-option>
         <el-option label="申诉" value="2"></el-option>
-        <el-option label="抖音/B站国际课程" value="3"></el-option>
-        <el-option label="B站申诉" value="4"></el-option>
+        <el-option label="国际课程" value="4"></el-option>
+        <el-option label="推月申诉" value="3"></el-option>
+        <el-option label="推月辅导" value="5"></el-option>
+        <el-option label="汇诺辅导" value="6"></el-option>
+        <el-option label="汇诺申诉" value="7"></el-option>
+        <el-option label="智云辅导" value="8"></el-option>
+        <el-option label="留学堂辅导" value="9"></el-option>
+        <el-option label="留学堂申诉" value="12"></el-option>
+        <el-option label="集好家辅导" value="10"></el-option>
+        <el-option label="集好家申诉" value="11"></el-option>
 
       </el-select>
       
@@ -16,15 +24,33 @@
       >轮班设置</el-button>
     </el-header>
 
+
     <el-dialog
   title="轮班设置"
   :visible.sync="dialogVisible"
-  width="90%"
+  width="50%"
   :before-close="handleClose">
+
+  <div class="dialog-header">
+    <el-select v-model="selectedSettingType" placeholder="选择顾问类型" class="setting-type-select">
+      <el-option label="辅导社群" :value="1"></el-option>
+      <el-option label="申诉社群" :value="2"></el-option>
+      <el-option label="推月申诉社群" :value="3"></el-option>
+      <el-option label="国际课程社群" :value="4"></el-option>
+      <el-option label="推月辅导社群" :value="5"></el-option>
+      <el-option label="汇诺辅导社群" :value="6"></el-option>
+      <el-option label="汇诺申诉社群" :value="7"></el-option>
+      <el-option label="智云辅导社群" :value="8"></el-option>
+      <el-option label="留学堂辅导社群" :value="9"></el-option>
+      <el-option label="留学堂申诉社群" :value="12"></el-option>
+      <el-option label="集好家辅导社群" :value="10"></el-option>
+      <el-option label="集好家申诉社群" :value="11"></el-option>
+    </el-select>
+  </div>
 
   <div class="consultants-container">
     <!-- 辅导顾问 -->
-    <div class="consultant-group">
+    <div class="consultant-group" v-show="selectedSettingType === 1" style="width: 100%;">
       <div class="group-title">辅导社群</div>
       <draggable 
         v-model="consultantType1" 
@@ -38,6 +64,7 @@
           :key="element.id"
           class="draggable-item"
         >
+
           <span class="drag-handle"><i class="el-icon-rank"></i></span>
           <span class="consultant-id">{{ element.sortOrder }}</span>
           <span class="consultant-name">{{ element.name }}</span>
@@ -52,7 +79,7 @@
     </div>
 
     <!-- 申诉顾问 -->
-    <div class="consultant-group">
+    <div class="consultant-group" v-show="selectedSettingType === 2" style="width: 100%;">
       <div class="group-title">申诉社群</div>
       <draggable 
         v-model="consultantType2" 
@@ -79,9 +106,9 @@
       </draggable>
     </div>
 
-    <!-- 抖音顾问 -->
-    <div class="consultant-group">
-      <div class="group-title">抖音/B站国际课程社群</div>
+    <!-- 推月申诉社群 -->
+    <div class="consultant-group" v-show="selectedSettingType === 3" style="width: 100%;">
+      <div class="group-title">推月申诉社群</div>
       <draggable 
         v-model="consultantType3" 
         :options="{group:'consultant-group3', ghostClass: 'ghost-item', animation: 200}"
@@ -107,11 +134,11 @@
       </draggable>
     </div>
 
-    <div class="consultant-group">
-      <div class="group-title">B站申诉社群</div>
+    <div class="consultant-group" v-show="selectedSettingType === 4" style="width: 100%;">
+      <div class="group-title">国际课程社群</div>
       <draggable 
         v-model="consultantType4" 
-        :options="{group:'consultant-group3', ghostClass: 'ghost-item', animation: 200}"
+        :options="{group:'consultant-group4', ghostClass: 'ghost-item', animation: 200}"
         @end="onDragEnd(4)"
         class="draggable-list"
         :move="checkMove"
@@ -134,6 +161,229 @@
       </draggable>
     </div>
 
+    <!-- 推月辅导社群 -->
+    <div class="consultant-group" v-show="selectedSettingType === 5" style="width: 100%;">
+      <div class="group-title">推月辅导社群</div>
+      <draggable 
+        v-model="consultantType5" 
+        :options="{group:'consultant-group5', ghostClass: 'ghost-item', animation: 200}"
+        @end="onDragEnd(5)"
+        class="draggable-list"
+        :move="checkMove"
+      >
+        <div 
+          v-for="element in consultantType5" 
+          :key="element.id"
+          class="draggable-item"
+        >
+          <span class="drag-handle"><i class="el-icon-rank"></i></span>
+          <span class="consultant-id">{{ element.sortOrder }}</span>
+          <span class="consultant-name">{{ element.name }}</span>
+          <el-select v-model="element.workStatus" @change="handleWorkStatusChange(element)" class="status-select" 
+            :class="{'status-rest': element.workStatus === 2, 'status-pause': element.workStatus === 3}">
+            <el-option label="正常" :value="1"></el-option>
+            <el-option label="休息" :value="2" class="option-rest"></el-option>
+            <el-option label="暂停" :value="3" class="option-pause"></el-option>
+          </el-select>
+        </div>
+      </draggable>
+    </div>
+    <!-- 汇诺辅导社群 -->
+    <div class="consultant-group" v-show="selectedSettingType === 6" style="width: 100%;">
+      <div class="group-title">汇诺辅导社群</div>
+      <draggable 
+        v-model="consultantType6" 
+        :options="{group:'consultant-group6', ghostClass: 'ghost-item', animation: 200}"
+        @end="onDragEnd(6)"
+        class="draggable-list"
+        :move="checkMove"
+      >
+        <div 
+          v-for="element in consultantType6" 
+          :key="element.id"
+          class="draggable-item"
+        >
+          <span class="drag-handle"><i class="el-icon-rank"></i></span>
+          <span class="consultant-id">{{ element.sortOrder }}</span>
+          <span class="consultant-name">{{ element.name }}</span>
+          <el-select v-model="element.workStatus" @change="handleWorkStatusChange(element)" class="status-select" 
+            :class="{'status-rest': element.workStatus === 2, 'status-pause': element.workStatus === 3}">
+            <el-option label="正常" :value="1"></el-option>
+            <el-option label="休息" :value="2" class="option-rest"></el-option>
+            <el-option label="暂停" :value="3" class="option-pause"></el-option>
+          </el-select>
+        </div>
+      </draggable>
+    </div>
+    <!-- 汇诺申诉社群 -->
+    <div class="consultant-group" v-show="selectedSettingType === 7" style="width: 100%;">
+      <div class="group-title">汇诺申诉社群</div>
+      <draggable 
+        v-model="consultantType7" 
+        :options="{group:'consultant-group7', ghostClass: 'ghost-item', animation: 200}"
+        @end="onDragEnd(7)"
+        class="draggable-list"
+        :move="checkMove"
+      >
+        <div 
+          v-for="element in consultantType7" 
+          :key="element.id"
+          class="draggable-item"
+        >
+          <span class="drag-handle"><i class="el-icon-rank"></i></span>
+          <span class="consultant-id">{{ element.sortOrder }}</span>
+          <span class="consultant-name">{{ element.name }}</span>
+          <el-select v-model="element.workStatus" @change="handleWorkStatusChange(element)" class="status-select" 
+            :class="{'status-rest': element.workStatus === 2, 'status-pause': element.workStatus === 3}">
+            <el-option label="正常" :value="1"></el-option>
+            <el-option label="休息" :value="2" class="option-rest"></el-option>
+            <el-option label="暂停" :value="3" class="option-pause"></el-option>
+          </el-select>
+        </div>
+      </draggable>
+    </div>
+
+
+    <!-- 智云辅导社群 -->
+    <div class="consultant-group" v-show="selectedSettingType === 8" style="width: 100%;">
+      <div class="group-title">智云辅导社群</div>
+      <draggable 
+        v-model="consultantType8" 
+        :options="{group:'consultant-group8', ghostClass: 'ghost-item', animation: 200}"
+        @end="onDragEnd(8)"
+        class="draggable-list"
+        :move="checkMove"
+      >
+        <div 
+          v-for="element in consultantType8" 
+          :key="element.id"
+          class="draggable-item"
+        >
+          <span class="drag-handle"><i class="el-icon-rank"></i></span>
+          <span class="consultant-id">{{ element.sortOrder }}</span>
+          <span class="consultant-name">{{ element.name }}</span>
+          <el-select v-model="element.workStatus" @change="handleWorkStatusChange(element)" class="status-select" 
+            :class="{'status-rest': element.workStatus === 2, 'status-pause': element.workStatus === 3}">
+            <el-option label="正常" :value="1"></el-option>
+            <el-option label="休息" :value="2" class="option-rest"></el-option>
+            <el-option label="暂停" :value="3" class="option-pause"></el-option>
+          </el-select>
+        </div>
+      </draggable>
+    </div>
+
+    <!-- 留学堂辅导社群 -->
+    <div class="consultant-group" v-show="selectedSettingType === 9" style="width: 100%;">
+      <div class="group-title">留学堂辅导社群</div>
+      <draggable 
+        v-model="consultantType9" 
+        :options="{group:'consultant-group9', ghostClass: 'ghost-item', animation: 200}"
+        @end="onDragEnd(9)"
+        class="draggable-list"
+        :move="checkMove"
+      >
+        <div 
+          v-for="element in consultantType9" 
+          :key="element.id"
+          class="draggable-item"
+        >
+          <span class="drag-handle"><i class="el-icon-rank"></i></span>
+          <span class="consultant-id">{{ element.sortOrder }}</span>
+          <span class="consultant-name">{{ element.name }}</span>
+          <el-select v-model="element.workStatus" @change="handleWorkStatusChange(element)" class="status-select" 
+            :class="{'status-rest': element.workStatus === 2, 'status-pause': element.workStatus === 3}">
+            <el-option label="正常" :value="1"></el-option>
+            <el-option label="休息" :value="2" class="option-rest"></el-option>
+            <el-option label="暂停" :value="3" class="option-pause"></el-option>
+          </el-select>
+        </div>
+      </draggable>
+    </div>
+
+    <!-- 留学堂申诉社群 -->
+    <div class="consultant-group" v-show="selectedSettingType === 12" style="width: 100%;">
+      <div class="group-title">留学堂申诉社群</div>
+      <draggable 
+        v-model="consultantType12" 
+        :options="{group:'consultant-group9', ghostClass: 'ghost-item', animation: 200}"
+        @end="onDragEnd(12)"
+        class="draggable-list"
+        :move="checkMove"
+      >
+        <div 
+          v-for="element in consultantType12" 
+          :key="element.id"
+          class="draggable-item"
+        >
+          <span class="drag-handle"><i class="el-icon-rank"></i></span>
+          <span class="consultant-id">{{ element.sortOrder }}</span>
+          <span class="consultant-name">{{ element.name }}</span>
+          <el-select v-model="element.workStatus" @change="handleWorkStatusChange(element)" class="status-select" 
+            :class="{'status-rest': element.workStatus === 2, 'status-pause': element.workStatus === 3}">
+            <el-option label="正常" :value="1"></el-option>
+            <el-option label="休息" :value="2" class="option-rest"></el-option>
+            <el-option label="暂停" :value="3" class="option-pause"></el-option>
+          </el-select>
+        </div>
+      </draggable>
+    </div>
+
+        <!-- 集好家辅导社群 -->
+    <div class="consultant-group" v-show="selectedSettingType === 10" style="width: 100%;">
+      <div class="group-title">集好家辅导社群</div>
+      <draggable 
+        v-model="consultantType10" 
+        :options="{group:'consultant-group10', ghostClass: 'ghost-item', animation: 200}"
+        @end="onDragEnd(10)"
+        class="draggable-list"
+        :move="checkMove"
+      >
+        <div 
+          v-for="element in consultantType10" 
+          :key="element.id"
+          class="draggable-item"
+        >
+          <span class="drag-handle"><i class="el-icon-rank"></i></span>
+          <span class="consultant-id">{{ element.sortOrder }}</span>
+          <span class="consultant-name">{{ element.name }}</span>
+          <el-select v-model="element.workStatus" @change="handleWorkStatusChange(element)" class="status-select" 
+            :class="{'status-rest': element.workStatus === 2, 'status-pause': element.workStatus === 3}">
+            <el-option label="正常" :value="1"></el-option>
+            <el-option label="休息" :value="2" class="option-rest"></el-option>
+            <el-option label="暂停" :value="3" class="option-pause"></el-option>
+          </el-select>
+        </div>
+      </draggable>
+    </div>
+
+
+        <!-- 集好家申诉社群 -->
+    <div class="consultant-group" v-show="selectedSettingType === 11" style="width: 100%;">
+      <div class="group-title">集好家申诉社群</div>
+      <draggable 
+        v-model="consultantType11" 
+        :options="{group:'consultant-group11', ghostClass: 'ghost-item', animation: 200}"
+        @end="onDragEnd(11)"
+        class="draggable-list"
+        :move="checkMove"
+      >
+        <div 
+          v-for="element in consultantType11" 
+          :key="element.id"
+          class="draggable-item"
+        >
+          <span class="drag-handle"><i class="el-icon-rank"></i></span>
+          <span class="consultant-id">{{ element.sortOrder }}</span>
+          <span class="consultant-name">{{ element.name }}</span>
+          <el-select v-model="element.workStatus" @change="handleWorkStatusChange(element)" class="status-select" 
+            :class="{'status-rest': element.workStatus === 2, 'status-pause': element.workStatus === 3}">
+            <el-option label="正常" :value="1"></el-option>
+            <el-option label="休息" :value="2" class="option-rest"></el-option>
+            <el-option label="暂停" :value="3" class="option-pause"></el-option>
+          </el-select>
+        </div>
+      </draggable>
+    </div>
     <add-advisor></add-advisor>
 
     
@@ -165,11 +415,11 @@
     <!-- 表格容器，使用flex布局并排显示 -->
     <div class="tables-flex-container">
       <!-- 官号表格 - 辅导和申诉类型显示 -->
-      <div v-if="selectedType === '1' || selectedType === '2'" class="table-container">
+      <div v-if="selectedType === '1' || selectedType === '2' || selectedType === '4'" class="table-container">
         <div class="table-section">
           <el-table :data="filteredConsultantsByNormal" ref="normalTable" highlight-current-row>
             <el-table-column prop="name" label="姓名" width="150"></el-table-column>
-            <el-table-column prop="countNormal" label="官号客资" width="150">
+            <el-table-column prop="countNormal" :label="getNormalLabel()" width="150">
               <template slot-scope="scope">
                 <el-input-number
                   v-model="scope.row.countNormal"
@@ -206,12 +456,12 @@
         </div>
       </div>
 
-      <!-- AP/Alevel表格 - 只有辅导类型显示 -->
+      <!-- 主动添加表格 - 只有辅导类型显示 -->
       <div v-if="selectedType === '1'" class="table-container">
         <div class="table-section">
           <el-table :data="filteredConsultantsBySingle1" ref="single1Table" highlight-current-row>
             <el-table-column prop="name" label="姓名" width="150"></el-table-column>
-            <el-table-column prop="countSingle1" label="AP/Alevel客资" width="150">
+            <el-table-column prop="countSingle1" label="主动添加客资" width="150">
               <template slot-scope="scope">
                 <el-input-number
                   v-model="scope.row.countSingle1"
@@ -227,12 +477,12 @@
         </div>
       </div>
 
-      <!-- 抖音表格 - 只有抖音类型显示 -->
+
       <div v-if="selectedType === '3'" class="table-container" style="flex: 1;">
         <div class="table-section">
           <el-table :data="filteredConsultantsBySingle1" ref="single1Table" highlight-current-row>
             <el-table-column prop="name" label="姓名" width="150"></el-table-column>
-            <el-table-column prop="countSingle1" label="抖音/B站国际课程" width="150">
+            <el-table-column prop="countSingle1" label="推月申诉" width="150">
               <template slot-scope="scope">
                 <el-input-number
                   v-model="scope.row.countSingle1"
@@ -248,12 +498,12 @@
         </div>
       </div>
 
-      <!-- 国际课程表格-->
+      <!-- type4表格-->
       <div v-if="selectedType === '4'" class="table-container" style="flex: 1;">
         <div class="table-section">
           <el-table :data="filteredConsultantsBySingle1" ref="single1Table" highlight-current-row>
             <el-table-column prop="name" label="姓名" width="150"></el-table-column>
-            <el-table-column prop="countSingle1" label="B站申诉客资" width="150">
+            <el-table-column prop="countSingle1" label="国际课程主动留资" width="200">
               <template slot-scope="scope">
                 <el-input-number
                   v-model="scope.row.countSingle1"
@@ -269,6 +519,174 @@
         </div>
       </div>
 
+      <!-- type5表格-->
+      <div v-if="selectedType === '5'" class="table-container" style="flex: 1;">
+        <div class="table-section">
+          <el-table :data="filteredConsultantsBySingle1" ref="single1Table" highlight-current-row>
+            <el-table-column prop="name" label="姓名" width="150"></el-table-column>
+            <el-table-column prop="countSingle1" label="推月辅导客资" width="150">
+              <template slot-scope="scope">
+                <el-input-number
+                  v-model="scope.row.countSingle1"
+                  :min="0"
+                  :max="1000"
+                  :disabled="scope.row.status === 0"  
+                  @change="handleICCountChange(scope.row)"
+                  size="small"
+                ></el-input-number>
+              </template>
+            </el-table-column>
+          </el-table>
+        </div>
+      </div>
+
+      <!-- type6表格-->
+      <div v-if="selectedType === '6'" class="table-container" style="flex: 1;">
+        <div class="table-section">
+          <el-table :data="filteredConsultantsBySingle1" ref="single1Table" highlight-current-row>
+            <el-table-column prop="name" label="姓名" width="150"></el-table-column>
+            <el-table-column prop="countSingle1" label="汇诺辅导客资" width="150">
+              <template slot-scope="scope">
+                <el-input-number
+                  v-model="scope.row.countSingle1"
+                  :min="0"
+                  :max="1000"
+                  :disabled="scope.row.status === 0"  
+                  @change="handleICCountChange(scope.row)"
+                  size="small"
+                ></el-input-number>
+              </template>
+            </el-table-column>
+          </el-table>
+        </div>
+      </div>
+
+      <!-- type7表格-->
+      <div v-if="selectedType === '7'" class="table-container" style="flex: 1;">
+        <div class="table-section">
+          <el-table :data="filteredConsultantsBySingle1" ref="single1Table" highlight-current-row>
+            <el-table-column prop="name" label="姓名" width="150"></el-table-column>
+            <el-table-column prop="countSingle1" label="汇诺申诉客资" width="150">
+              <template slot-scope="scope">
+                <el-input-number
+                  v-model="scope.row.countSingle1"
+                  :min="0"
+                  :max="1000"
+                  :disabled="scope.row.status === 0"  
+                  @change="handleICCountChange(scope.row)"
+                  size="small"
+                ></el-input-number>
+              </template>
+            </el-table-column>
+          </el-table>
+        </div>
+      </div>
+        
+      <div v-if="selectedType === '8'" class="table-container" style="flex: 1;">
+        <div class="table-section">
+          <el-table :data="filteredConsultantsBySingle1" ref="single1Table" highlight-current-row>
+            <el-table-column prop="name" label="姓名" width="150"></el-table-column>
+            <el-table-column prop="countSingle1" label="智云辅导客资" width="150">
+              <template slot-scope="scope">
+                <el-input-number
+                  v-model="scope.row.countSingle1"
+                  :min="0"
+                  :max="1000"
+                  :disabled="scope.row.status === 0"  
+                  @change="handleICCountChange(scope.row)"
+                  size="small"
+                ></el-input-number>
+              </template>
+            </el-table-column>
+          </el-table>
+        </div>
+      </div>
+
+
+      <div v-if="selectedType === '9'" class="table-container" style="flex: 1;">
+        <div class="table-section">
+          <el-table :data="filteredConsultantsBySingle1" ref="single1Table" highlight-current-row>
+            <el-table-column prop="name" label="姓名" width="150"></el-table-column>
+            <el-table-column prop="countSingle1" label="留学堂辅导客资" width="150">
+              <template slot-scope="scope">
+                <el-input-number
+                  v-model="scope.row.countSingle1"
+                  :min="0"
+                  :max="1000"
+                  :disabled="scope.row.status === 0"  
+                  @change="handleICCountChange(scope.row)"
+                  size="small"
+                ></el-input-number>
+              </template>
+            </el-table-column>
+          </el-table>
+        </div>
+      </div>
+
+      <div v-if="selectedType === '12'" class="table-container" style="flex: 1;">
+        <div class="table-section">
+          <el-table :data="filteredConsultantsBySingle1" ref="single1Table" highlight-current-row>
+            <el-table-column prop="name" label="姓名" width="150"></el-table-column>
+            <el-table-column prop="countSingle1" label="留学堂申诉客资" width="150">
+              <template slot-scope="scope">
+                <el-input-number
+                  v-model="scope.row.countSingle1"
+                  :min="0"
+                  :max="1000"
+                  :disabled="scope.row.status === 0"  
+                  @change="handleICCountChange(scope.row)"
+                  size="small"
+                ></el-input-number>
+              </template>
+            </el-table-column>
+          </el-table>
+        </div>
+      </div>
+
+      <div v-if="selectedType === '10'" class="table-container" style="flex: 1;">
+        <div class="table-section">
+          <el-table :data="filteredConsultantsBySingle1" ref="single1Table" highlight-current-row>
+            <el-table-column prop="name" label="姓名" width="150"></el-table-column>
+            <el-table-column prop="countSingle1" label="集好家辅导客资" width="150">
+              <template slot-scope="scope">
+                <el-input-number
+                  v-model="scope.row.countSingle1"
+                  :min="0"
+                  :max="1000"
+                  :disabled="scope.row.status === 0"  
+                  @change="handleICCountChange(scope.row)"
+                  size="small"
+                ></el-input-number>
+              </template>
+            </el-table-column>
+          </el-table>
+        </div>
+      </div>
+
+
+            <div v-if="selectedType === '11'" class="table-container" style="flex: 1;">
+        <div class="table-section">
+          <el-table :data="filteredConsultantsBySingle1" ref="single1Table" highlight-current-row>
+            <el-table-column prop="name" label="姓名" width="150"></el-table-column>
+            <el-table-column prop="countSingle1" label="集好家申诉客资" width="150">
+              <template slot-scope="scope">
+                <el-input-number
+                  v-model="scope.row.countSingle1"
+                  :min="0"
+                  :max="1000"
+                  :disabled="scope.row.status === 0"  
+                  @change="handleICCountChange(scope.row)"
+                  size="small"
+                ></el-input-number>
+              </template>
+            </el-table-column>
+          </el-table>
+        </div>
+      </div>
+
+
+     
+
     </div>
   </div>
 </template>
@@ -279,6 +697,7 @@ import request from '@/utils/request'
 import webSocket from '@/utils/websocket'
 import draggable from 'vuedraggable'
 import AddAdvisor from './AddAdvisor.vue'
+import { watch } from 'vue'
 
 export default {
   components: {
@@ -294,6 +713,14 @@ export default {
             consultantType2: [],
             consultantType3: [],
             consultantType4: [],
+            consultantType5: [],
+            consultantType6: [],
+            consultantType7: [],
+            consultantType8: [],
+            consultantType9: [],
+            consultantType10: [],
+            consultantType11: [],
+            consultantType12: [],
             activeMenu: '1', 
             switchStatus:0,
             filteredConsultantsByNormal: [] ,
@@ -302,9 +729,16 @@ export default {
             filteredConsultantsByDy: [], 
             tempConsultants: [],
             selectedType: "1",
+            selectedSettingType: 1,
             pauseReasonDialogVisible: false,
             pauseReason: '',
             currentConsultant: null,
+
+            menus:[1,2,3],
+            rightClickItem:'',
+            deleteMenuVisible:false,
+            top:0,
+            left:0
         };
     },
     
@@ -354,18 +788,28 @@ export default {
             const type2 = val.filter(c => c.type === 2);
             const type3 = val.filter(c => c.type === 3);
             const type4 = val.filter(c => c.type === 4);
+            const type5 = val.filter(c => c.type === 5);
+            const type6 = val.filter(c => c.type === 6);
+            const type7 = val.filter(c => c.type === 7);
+            const type8 = val.filter(c => c.type === 8);
+            const type9 = val.filter(c => c.type === 9);
+            const type10 = val.filter(c => c.type === 10);
+            const type11 = val.filter(c => c.type === 11);
+            const type12 = val.filter(c => c.type === 12);
             
-            console.log('过滤后的顾问数量 - 辅导:', type1.length, '申诉:', type2.length, '对客:', type3.length, type4.length);
-            
+          
             this.consultantType1 = type1.sort((a, b) => a.sortOrder - b.sortOrder);
             this.consultantType2 = type2.sort((a, b) => a.sortOrder - b.sortOrder);
             this.consultantType3 = type3.sort((a, b) => a.sortOrder - b.sortOrder);
             this.consultantType4 = type4.sort((a, b) => a.sortOrder - b.sortOrder);
-            
-            console.log('consultantType1:', this.consultantType1);
-            console.log('consultantType2:', this.consultantType2);
-            console.log('consultantType3:', this.consultantType3);
-            console.log('consultantType4:', this.consultantType4);
+            this.consultantType5 = type5.sort((a, b) => a,sortOrder - b.sortOrder);
+            this.consultantType6 = type6.sort((a, b) => a,sortOrder - b.sortOrder);
+            this.consultantType7 = type7.sort((a, b) => a,sortOrder - b.sortOrder);
+            this.consultantType8 = type8.sort((a, b) => a,sortOrder - b.sortOrder);
+            this.consultantType9 = type9.sort((a, b) => a,sortOrder - b.sortOrder);
+            this.consultantType10 = type10.sort((a, b) => a,sortOrder - b.sortOrder);
+            this.consultantType11 = type11.sort((a, b) => a,sortOrder - b.sortOrder);
+            this.consultantType12 = type12.sort((a, b) => a,sortOrder - b.sortOrder);
           }
         }
       }
@@ -388,6 +832,7 @@ export default {
                 
                 // 检查是否有type=4的顾问
                 const type4Consultants = this.consultant.filter(c => c.type === 4);
+                const type5Consultants = this.consultant.filter(c => c.type === 5);
                 console.log('Type=4顾问数量:', type4Consultants.length);
                 console.log('Type=4顾问详情:', type4Consultants);
                 
@@ -521,26 +966,53 @@ export default {
       this.consultantType4 = this.consultant
         .filter(c => c.type === 4)
         .sort((a, b) => a.sortOrder - b.sortOrder);
+
+      this.consultantType5 = this.consultant
+        .filter(c => c.type === 5)
+        .sort((a, b) => a.sortOrder - b.sortOrder);
+        
+      this.consultantType6 = this.consultant
+        .filter(c => c.type === 6)
+        .sort((a, b) => a.sortOrder - b.sortOrder);
+
+      this.consultantType7 = this.consultant
+        .filter(c => c.type === 7)
+        .sort((a, b) => a.sortOrder - b.sortOrder);
+
+      this.consultantType8 = this.consultant
+        .filter(c => c.type === 8)
+        .sort((a, b) => a.sortOrder - b.sortOrder);
+      
+      this.consultantType9 = this.consultant
+        .filter(c => c.type === 9)
+        .sort((a, b) => a.sortOrder - b.sortOrder);
+
+      this.consultantType10 = this.consultant
+        .filter(c => c.type === 10)
+        .sort((a, b) => a.sortOrder - b.sortOrder);
+
+      this.consultantType11 = this.consultant
+        .filter(c => c.type === 11)
+        .sort((a, b) => a.sortOrder - b.sortOrder);
+
+      this.consultantType12 = this.consultant
+        .filter(c => c.type === 12)
+        .sort((a, b) => a.sortOrder - b.sortOrder);
         
       // 检查各类型顾问数量
       const type1Count = this.consultantType1.length;
       const type2Count = this.consultantType2.length;
       const type3Count = this.consultantType3.length;
       const type4Count = this.consultantType4.length;
+      const type5Count = this.consultantType5.length;
+      const type6Count = this.consultantType6.length;
+      const type7Count = this.consultantType7.length;
+      const type8Count = this.consultantType8.length;
+      const type9Count = this.consultantType9.length;
+      const type10Count = this.consultantType10.length;
+      const type11Count = this.consultantType11.length;
+      const type12Count = this.consultantType12.length;
       
-      console.log('更新后的顾问分组:', {
-        '辅导': type1Count,
-        '申诉': type2Count,
-        '对客': type3Count,
-        '国际课程': type4Count
-      });
-      
-      // 详细日志
-      if (type1Count > 0) console.log('辅导顾问详情:', this.consultantType1);
-      if (type2Count > 0) console.log('申诉顾问详情:', this.consultantType2);
-      if (type3Count > 0) console.log('对客顾问详情:', this.consultantType3);
-      if (type4Count > 0) console.log('国际课程顾问详情:', this.consultantType4);
-      else console.log('警告: 没有国际课程顾问数据!');
     },
     
     addCountNormal(consultant) {
@@ -664,8 +1136,15 @@ export default {
         const consultantList = type === 1 ? this.consultantType1 :
                               type === 2 ? this.consultantType2 :
                               type ===3 ? this.consultantType3 :
-                              this.consultantType4;
-        
+                              type ===4 ? this.consultantType4 :
+                              type ===5 ? this.consultantType5 :
+                              type ===6 ? this.consultantType6 :
+                              type ===7 ? this.consultantType7 :
+                              type ===8 ? this.consultantType8 :
+                              type ===9 ? this.consultantType9 :
+                              type ===10 ? this.consultantType10:
+                              type ===11 ?this.consultantType11 :
+                              this.consultantType12
         // 更新本地显示的排序顺序
         consultantList.forEach((item, index) => {
           item.sortOrder = index + 1;
@@ -800,7 +1279,7 @@ export default {
       console.log('过滤后的基础顾问数据:', baseConsultants);
 
       // 辅导或申诉顾问的表格数据
-      if (this.selectedType === '1' || this.selectedType === '2') {
+      if (this.selectedType === '1' || this.selectedType === '2' || this.selectedType === '4') {
         this.filteredConsultantsByNormal = this.sortConsultants(
           baseConsultants.map(c => ({...c, accountType: 'normal'})),
           'countNormal'
@@ -821,22 +1300,66 @@ export default {
           'countSingle1'
         );
         console.log('AP/Alevel表格数据:', this.filteredConsultantsBySingle1);
-      } 
-      // 抖音表格数据 - 只在抖音类型时显示
-      else if (this.selectedType === '3') {
+      }else if (this.selectedType === '3') {
         this.filteredConsultantsBySingle1 = this.sortConsultants(
           this.consultantType3.filter(c => c.status === 1),
           'countSingle1'
         );
         console.log('抖音表格数据:', this.filteredConsultantsBySingle1);
-      }
-      // 国际课程表格数据 - 只在国际课程类型时显示
-      else if (this.selectedType === '4') {
+      }else if (this.selectedType === '4') {
         this.filteredConsultantsBySingle1 = this.sortConsultants(
           this.consultantType4.filter(c => c.status === 1),
           'countSingle1'
         );
-        console.log('国际课程表格数据:', this.filteredConsultantsBySingle1);
+        console.log('type4表格数据:', this.filteredConsultantsBySingle1);
+      }else if (this.selectedType === '5') {
+        this.filteredConsultantsBySingle1 = this.sortConsultants(
+          this.consultantType5.filter(c => c.status === 1),
+          'countSingle1'
+        );
+        console.log('type5表格数据:', this.filteredConsultantsBySingle1);
+      }else if (this.selectedType === '6') {
+        this.filteredConsultantsBySingle1 = this.sortConsultants(
+          this.consultantType6.filter(c => c.status === 1),
+          'countSingle1'
+        );
+        console.log('type6表格数据:', this.filteredConsultantsBySingle1);
+      }else if (this.selectedType === '7') {
+        this.filteredConsultantsBySingle1 = this.sortConsultants(
+          this.consultantType7.filter(c => c.status === 1),
+          'countSingle1'
+        );
+        console.log('type8表格数据:', this.filteredConsultantsBySingle1);
+      }else if (this.selectedType === '8') {
+        this.filteredConsultantsBySingle1 = this.sortConsultants(
+          this.consultantType8.filter(c => c.status === 1),
+          'countSingle1'
+        );
+        console.log('type8表格数据:', this.filteredConsultantsBySingle1);
+      }else if (this.selectedType === '9') {
+        this.filteredConsultantsBySingle1 = this.sortConsultants(
+          this.consultantType9.filter(c => c.status === 1),
+          'countSingle1'
+        );
+        console.log('type9表格数据:', this.filteredConsultantsBySingle1);
+      }else if (this.selectedType === '10') {
+        this.filteredConsultantsBySingle1 = this.sortConsultants(
+          this.consultantType10.filter(c => c.status === 1),
+          'countSingle1'
+        );
+        console.log('type10表格数据:', this.filteredConsultantsBySingle1);
+      }else if (this.selectedType === '11') {
+        this.filteredConsultantsBySingle1 = this.sortConsultants(
+          this.consultantType11.filter(c => c.status === 1),
+          'countSingle1'
+        );
+        console.log('type11表格数据:', this.filteredConsultantsBySingle1);
+      }else if (this.selectedType === '12') {
+        this.filteredConsultantsBySingle1 = this.sortConsultants(
+          this.consultantType12.filter(c => c.status === 1),
+          'countSingle1'
+        );
+        console.log('type12表格数据:', this.filteredConsultantsBySingle1);
       }
     },
 
@@ -853,6 +1376,15 @@ export default {
     handleNormalCountChange(consultant) {
       this.updateConsultant(consultant, 'updateNormalCount');
     },
+
+    getNormalLabel(){
+      if(this.selectedType === '4'){
+        return '国际课程'
+      }else{
+        return '官号'
+      }
+    }
+
   }
         
 }
@@ -889,11 +1421,19 @@ export default {
   height: 20px;
 }
 
+.dialog-header {
+  margin-bottom: 20px;
+}
+
+.setting-type-select {
+  width: 220px;
+}
+
 .group-title {
-  font-size: 14px; /* 减小字体大小 */
+  font-size: 16px;
   font-weight: bold;
-  margin-bottom: 5px; /* 减小底部边距 */
-  padding-left: 5px; /* 减小左侧内边距 */
+  margin-bottom: 10px;
+  padding-left: 5px;
   color: #409EFF;
 }
 
@@ -906,8 +1446,8 @@ export default {
 
 .consultant-group {
   flex: 1;
-  min-width: 200px; /* 增加最小宽度 */
-  max-width: 320px; /* 增加最大宽度 */
+  min-width: 200px;
+  max-width: 100%; /* 修改为占满整个容器宽度 */
 }
 
 .status-select {
@@ -970,36 +1510,36 @@ export default {
 .draggable-item {
   display: flex;
   align-items: center;
-  padding: 6px;
-  margin-bottom: 3px;
+  padding: 8px;
+  margin-bottom: 5px;
   background-color: white;
   border-radius: 3px;
   border: 1px solid #dcdfe6;
   cursor: move;
-  min-height: 36px; /* 确保最小高度 */
+  min-height: 40px; /* 增加最小高度 */
 }
 
 .drag-handle {
-  margin-right: 5px;
+  margin-right: 10px;
   color: #909399;
   cursor: move;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .consultant-id {
-  width: 18px;
-  margin-right: 5px;
+  width: 24px;
+  margin-right: 10px;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .consultant-name {
   flex: 1;
-  margin-right: 8px; /* 增加右侧边距，为状态选择框留出更多空间 */
+  margin-right: 15px; /* 增加右侧边距，为状态选择框留出更多空间 */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .ghost-item {

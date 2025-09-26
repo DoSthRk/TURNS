@@ -16,19 +16,78 @@
       >
         申诉
       </el-button>
-      <el-button
-        :type="selectedType === 3 ? 'primary' : 'success'"
-        @click="selectType(3)"
-        class="type-button"
-      >
-        抖音/B站国际课程
-      </el-button>
+
       <el-button
         :type="selectedType === 4 ? 'primary' : 'success'"
         @click="selectType(4)"
         class="type-button"
       >
-        B站申诉
+        国际课程
+      </el-button>
+
+      <el-button
+        :type="selectedType === 3 ? 'primary' : 'success'"
+        @click="selectType(3)"
+        class="type-button"
+      >
+        推月申诉
+      </el-button>
+
+      <el-button
+        :type="selectedType === 5 ? 'primary' : 'success'"
+        @click="selectType(5)"
+        class="type-button"
+      >
+        推月辅导
+      </el-button>
+            <el-button
+        :type="selectedType === 6 ? 'primary' : 'success'"
+        @click="selectType(6)"
+        class="type-button"
+      >
+        汇诺辅导
+      </el-button>
+            <el-button
+        :type="selectedType === 7 ? 'primary' : 'success'"
+        @click="selectType(7)"
+        class="type-button"
+      >
+        汇诺申诉
+      </el-button>
+      <el-button
+        :type="selectedType === 8 ? 'primary' : 'success'"
+        @click="selectType(8)"
+        class="type-button"
+      >
+        智云辅导
+      </el-button>
+      <el-button
+        :type="selectedType === 9 ? 'primary' : 'success'"
+        @click="selectType(9)"
+        class="type-button"
+      >
+        留学堂辅导
+      </el-button>
+      <el-button
+        :type="selectedType === 12 ? 'primary' : 'success'"
+        @click="selectType(12)"
+        class="type-button"
+      >
+        留学堂申诉
+      </el-button>
+      <el-button
+        :type="selectedType === 10 ? 'primary' : 'success'"
+        @click="selectType(10)"
+        class="type-button"
+      >
+        集好家辅导
+      </el-button>
+      <el-button
+        :type="selectedType === 11 ? 'primary' : 'success'"
+        @click="selectType(11)"
+        class="type-button"
+      >
+        集好家申诉
       </el-button>
       
       <!-- 显示选择类型的内容 -->
@@ -40,7 +99,16 @@
                 (hasComplementType1 ? '辅导正在补客资' : '辅导') : 
               selectedType === 2 ? 
                 (hasComplementType2 ? '申诉正在补客资' : '申诉') : 
-              selectedType === 3 ? '抖音/B站国际课程' : 'B站申诉'
+              selectedType === 3 ? '推月申诉':
+              selectedType === 5 ? '推月辅导': 
+              selectedType === 4 ? '国际课程':
+              selectedType === 6 ? '汇诺辅导':
+              selectedType === 7 ? '汇诺申诉':
+              selectedType === 8 ? '智云辅导':
+              selectedType === 9 ? '留学堂辅导':
+              selectedType === 10 ? '集好家辅导':
+              selectedType === 11 ?'集好家申诉' :
+              '留学堂申诉'
             }}
           </h1>
           <!-- 修改休息/暂停顾问显示 -->
@@ -64,11 +132,11 @@
       </el-col>
 
       <!-- 辅导和申诉相关表格 -->
-      <template v-if="selectedType !== 3 && selectedType !== 4">
-        <template>
+      
+        <template v-if="selectedType === 1 || selectedType === 2 || selectedType ===4">
           <!-- 官号表格 -->
           <el-table :data="normalTableData" class="normalTable">
-            <el-table-column prop="name" label="官号"></el-table-column>
+            <el-table-column prop="name" :label="getNormalLabel()"></el-table-column>
             <el-table-column>
               <template slot-scope="scope">
                 <div v-if="scope.row.orderStatusNormal === 0">
@@ -85,33 +153,14 @@
             </el-table-column>
             <el-table-column prop="countNormal" label="客资" width="150"></el-table-column>
           </el-table>
-          
-          <el-divider><i class="el-icon-paperclip"></i></el-divider>
-          
-          <!-- SEM表格 -->
-          <el-table :data="semTableData">
-            <el-table-column prop="name" label="SEM"></el-table-column>
-            <el-table-column>
-              <template slot-scope="scope">
-                <div v-if="scope.row.orderStatusSem === 0">
-                  <el-button slot="reference" type="success" @click="restoreConsultantSem(scope.row)">补</el-button>
-                </div>
-                <div v-else>
-                  <el-button @click="addCountSem(scope.row)" type="success">分配</el-button>
-                  <el-button type="danger" @click="skipSem(scope.row)">跳过</el-button>
-                  <el-button v-if="scope.row.waitingSem === 1" type="info" @click="confirmSem(scope.row)">
-                    已@，等回复
-                  </el-button>
-                </div>
-              </template>
-            </el-table-column>
-            <el-table-column prop="countSem" label="客资" width="150"></el-table-column>
-          </el-table>
         </template>
-      </template>
-      <el-divider><i class="el-icon-paperclip"></i></el-divider>
-      <!-- AP/Alevel客资表格，在type=1, 3, 4时显示 -->
-      <template v-if="selectedType === 3 || selectedType === 4 || selectedType === 1">
+      
+          <el-divider><i class="el-icon-paperclip"></i></el-divider>
+
+
+        <!-- AP/Alevel客资表格，在type=1, 3, 4时显示 ,-->
+      <template v-if="selectedType === 1 ||selectedType === 3 || selectedType === 4 || selectedType ===5 || selectedType ===6 || selectedType ===7 || selectedType === 8
+       || selectedType === 9 || selectedType === 10 || selectedType === 11 || selectedType === 12">
         <el-table :data="single1TableData">
           <el-table-column prop="name" :label="getSingle1Label()"></el-table-column>
           <el-table-column>
@@ -132,6 +181,32 @@
         </el-table>
       </template>
 
+
+      <el-divider><i class="el-icon-paperclip"></i></el-divider>
+
+      
+        <template v-if="selectedType === 1 || selectedType === 2">
+          <!-- SEM表格 -->
+          <el-table :data="semTableData">
+            <el-table-column prop="name" label="SEM"></el-table-column>
+            <el-table-column>
+              <template slot-scope="scope">
+                <div v-if="scope.row.orderStatusSem === 0">
+                  <el-button slot="reference" type="success" @click="restoreConsultantSem(scope.row)">补</el-button>
+                </div>
+                <div v-else>
+                  <el-button @click="addCountSem(scope.row)" type="success">分配</el-button>
+                  <el-button type="danger" @click="skipSem(scope.row)">跳过</el-button>
+                  <el-button v-if="scope.row.waitingSem === 1" type="info" @click="confirmSem(scope.row)">
+                    已@，等回复
+                  </el-button>
+                </div>
+              </template>
+            </el-table-column>
+            <el-table-column prop="countSem" label="客资" width="150"></el-table-column>
+          </el-table>
+        </template>
+      
     </el-tab-pane>
     
     <el-tab-pane label="总表">
@@ -167,17 +242,13 @@ export default {
             firstNormalData: {}, // 第一行数据
             firstSemData:{},
             firstSingle1Data:{},
-
             secNormalData:{},
             secSemData:{},
             secSingle1Data:{},
-
             thirdNormalData:{},
             thirdSemData:{},
             thirdSingle1Data:{},
-
             selectedType: 1,
-
             normalTableData:[],
             semTableData:[],
             single1TableData:[],
@@ -750,13 +821,41 @@ confirmIC(consultant) {
   // 获取Single1表格标题的方法
   getSingle1Label() {
     if (this.selectedType === 3) {
-      return '抖音/B站国际课程';
+      return '推月申诉';
     } else if (this.selectedType === 4) {
-      return 'B站申诉';
-    } else {
-      return 'AP/Alevel客资';
+      return '国际课程主动留资';
+    } else if (this.selectedType === 1){
+      return '主动添加';
+    } else if (this.selectedType === 5){
+      return '推月辅导'
+    } else if (this.selectedType === 6){
+      return '汇诺辅导'
+    } else if (this.selectedType === 7){
+      return '汇诺申诉'
+    } else if (this.selectedType === 8){
+      return '智云辅导'
+    } else if (this.selectedType === 9){
+      return '留学堂辅导'
+    }else if (this.selectedType === 10){
+      return '集好家辅导'
+    }else if (this.selectedType === 11){
+      return '集好家申诉'
+    }else if (this.selectedType === 12){
+      return '留学堂申诉'
     }
   },
+
+  getNormalLabel(){
+    if(this.selectedType === 1){
+      return '官号(拉群)';
+    }
+    if(this.selectedType ===4){
+      return '国际课程'
+    }
+    else{
+      return '官号';
+    }
+  }
 }
 }
 </script>

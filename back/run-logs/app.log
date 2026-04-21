@@ -45,3 +45,240 @@
 2026-04-21 21:06:22.069 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet [traceId=N/A] - Initializing Servlet 'dispatcherServlet'
 2026-04-21 21:06:22.071 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet [traceId=N/A] - Completed initialization in 1 ms
 2026-04-21 21:06:22.187 [http-nio-8080-exec-1] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=a34d5ccf-8ebb-a966-5e2b-db113e57ca33, activeSessions=1
+2026-04-21 21:06:59.894 [http-nio-8080-exec-3] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=a34d5ccf-8ebb-a966-5e2b-db113e57ca33, status=CloseStatus[code=1000, reason=null], activeSessions=0
+2026-04-21 21:06:59.905 [http-nio-8080-exec-2] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=06d91ebf-e524-4519-5215-656886142e31, activeSessions=1
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":36,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":1,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":0,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+2026-04-21 21:07:19.088 [http-nio-8080-exec-4] INFO  com.qj.back.utils.JwtUtil [traceId=d0b769e2cd1742868cb5206d88e26e4b] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY0MTcsImV4cCI6MTc3Njg2MjgxN30.R-7eAPZnvhusoVOC5YUbaEGq7WhgxXchBApdgBMtGHc
+2026-04-21 21:07:19.126 [http-nio-8080-exec-4] ERROR com.qj.back.utils.JwtUtil [traceId=d0b769e2cd1742868cb5206d88e26e4b] - tokenÈ™åËØÅÂ§±Ë¥•
+io.jsonwebtoken.security.SignatureException: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:399)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:529)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:589)
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173)
+	at com.qj.back.utils.JwtUtil.validateToken(JwtUtil.java:34)
+	at com.qj.back.controller.ShiftModuleConfigController.verifyAdmin(ShiftModuleConfigController.java:123)
+	at com.qj.back.controller.ShiftModuleConfigController.saveConfigsByType(ShiftModuleConfigController.java:99)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.qj.back.config.TraceIdFilter.doFilterInternal(TraceIdFilter.java:30)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2026-04-21 21:07:20.720 [http-nio-8080-exec-5] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=06d91ebf-e524-4519-5215-656886142e31, status=CloseStatus[code=1001, reason=null], activeSessions=0
+2026-04-21 21:07:24.884 [http-nio-8080-exec-8] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=c5ff1567-549d-0a57-bbc7-52302a1152a9, activeSessions=1
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+2026-04-21 21:07:24.921 [http-nio-8080-exec-10] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=34863857715e45d5aee8b0dd58161d09] - Êü•ËØ¢ÊâÄÊúâË°•ÂÖÖÈ°æÈóÆ
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":36,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":1,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":0,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":36,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":1,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":0,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+2026-04-21 21:07:26.716 [http-nio-8080-exec-4] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=c5ff1567-549d-0a57-bbc7-52302a1152a9, status=CloseStatus[code=1000, reason=null], activeSessions=0
+2026-04-21 21:07:34.131 [http-nio-8080-exec-10] INFO  com.qj.back.utils.JwtUtil [traceId=e7af0656dd9b4554b691830fcf845e82] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:07:39.371 [http-nio-8080-exec-1] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=1e309e92-dd84-ae13-7369-4b198c3f6b5b, activeSessions=1
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+2026-04-21 21:07:39.381 [http-nio-8080-exec-7] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=d7fdec12eadb493898fa7248d85bca28] - Êü•ËØ¢ÊâÄÊúâË°•ÂÖÖÈ°æÈóÆ
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":36,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":1,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":0,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":36,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":1,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":0,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+2026-04-21 21:07:43.066 [http-nio-8080-exec-10] INFO  com.qj.back.utils.JwtUtil [traceId=e296ee5390ba48dfa122de34a6dcb534] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:07:44.251 [http-nio-8080-exec-2] INFO  com.qj.back.utils.JwtUtil [traceId=9f02766fac6b406a97e71070671666e0] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:07:45.717 [http-nio-8080-exec-9] INFO  com.qj.back.utils.JwtUtil [traceId=ce7682beefb945a8b366eb2b4df07acb] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:07:51.602 [http-nio-8080-exec-7] INFO  com.qj.back.utils.JwtUtil [traceId=8b264f2e61cb44f98866c8d94be6d4b1] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:07:52.297 [http-nio-8080-exec-5] INFO  com.qj.back.utils.JwtUtil [traceId=c3e5e6e9059c4bbb9b2a43dbfb5f0a51] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:07:53.104 [http-nio-8080-exec-1] INFO  com.qj.back.utils.JwtUtil [traceId=d311fbb70d7642e2aa3db9fe35752e21] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:01.215 [http-nio-8080-exec-4] INFO  com.qj.back.utils.JwtUtil [traceId=2b28a861036346d1afc06765c834aa0b] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:02.347 [http-nio-8080-exec-8] INFO  com.qj.back.utils.JwtUtil [traceId=9ccf390d4b1149fcb068b3c55a0bd5ff] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:03.205 [http-nio-8080-exec-2] INFO  com.qj.back.utils.JwtUtil [traceId=0e9d9667597b481c9e86ac5575cb1077] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:03.795 [http-nio-8080-exec-9] INFO  com.qj.back.utils.JwtUtil [traceId=046db03ae93a4c1292f5ce81f1a9c4fb] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:04.505 [http-nio-8080-exec-7] INFO  com.qj.back.utils.JwtUtil [traceId=d479b8cea67c4dbfa7d3e2084e0b45a0] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:07.131 [http-nio-8080-exec-1] INFO  com.qj.back.utils.JwtUtil [traceId=4d017eaa91cc4223b8354f2a23005a56] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:07.673 [http-nio-8080-exec-3] INFO  com.qj.back.utils.JwtUtil [traceId=9ee778f2da18414aa5da10cfa93d5ab6] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:08.589 [http-nio-8080-exec-4] INFO  com.qj.back.utils.JwtUtil [traceId=7085099fd1ef4f6780faf5a98a42ce58] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:09.111 [http-nio-8080-exec-6] INFO  com.qj.back.utils.JwtUtil [traceId=76a82ebf481d47308ae0e3420db5a61a] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:09.845 [http-nio-8080-exec-8] INFO  com.qj.back.utils.JwtUtil [traceId=493947d2abed4fb6ab33e43cab523046] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:14.448 [http-nio-8080-exec-10] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=1e309e92-dd84-ae13-7369-4b198c3f6b5b, status=CloseStatus[code=1001, reason=null], activeSessions=0
+2026-04-21 21:08:14.714 [http-nio-8080-exec-2] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=614d8617-5b93-35ac-e5d1-f29b3f0c295a, activeSessions=1
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+2026-04-21 21:08:14.730 [http-nio-8080-exec-7] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=e1853b8e188041fda9f425fda1392436] - Êü•ËØ¢ÊâÄÊúâË°•ÂÖÖÈ°æÈóÆ
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":36,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":1,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":1,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":36,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":1,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":1,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+2026-04-21 21:08:24.298 [http-nio-8080-exec-9] INFO  com.qj.back.utils.JwtUtil [traceId=70c8756f9bcb4df68c6b67cec966d6b5] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:25.648 [http-nio-8080-exec-4] INFO  com.qj.back.utils.JwtUtil [traceId=9b52d92608014a29af3efacf5ad0a6b7] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:26.555 [http-nio-8080-exec-6] INFO  com.qj.back.utils.JwtUtil [traceId=6e750ab27b9d49f883a78ce3903991bd] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:27.397 [http-nio-8080-exec-5] INFO  com.qj.back.utils.JwtUtil [traceId=3ab8eae3b51b40ae85cef564c6176596] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:27.875 [http-nio-8080-exec-1] INFO  com.qj.back.utils.JwtUtil [traceId=a95a74d0add74065bb9b2b2337b10f63] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:29.107 [http-nio-8080-exec-10] INFO  com.qj.back.utils.JwtUtil [traceId=be7df63d7fa944098922fd096f2370f8] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:36.718 [http-nio-8080-exec-7] INFO  com.qj.back.utils.JwtUtil [traceId=9a8ffcf31d3b4ff49d05569f1eed4522] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:37.750 [http-nio-8080-exec-8] INFO  com.qj.back.utils.JwtUtil [traceId=8f59c97771b140d7a9fe7c19bf81b396] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:42.942 [http-nio-8080-exec-2] INFO  com.qj.back.utils.JwtUtil [traceId=5d28b9b52aca43e18929ba50bfc31352] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:46.245 [http-nio-8080-exec-3] INFO  com.qj.back.utils.JwtUtil [traceId=7aa242200a404501a9eac35c83ddd862] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:48.195 [http-nio-8080-exec-9] INFO  com.qj.back.utils.JwtUtil [traceId=3c1dbe7a9f364cb0b0afa0ff79018047] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:49.316 [http-nio-8080-exec-4] INFO  com.qj.back.utils.JwtUtil [traceId=9b5f907a23de4b5f9ded38c33561c061] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:49.890 [http-nio-8080-exec-6] INFO  com.qj.back.utils.JwtUtil [traceId=fe32dc0f31e8414dbecb86d72d11aff0] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:51.039 [http-nio-8080-exec-5] INFO  com.qj.back.utils.JwtUtil [traceId=9f958fdf30ae48008282e6b5bcee2ac4] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:51.482 [http-nio-8080-exec-1] INFO  com.qj.back.utils.JwtUtil [traceId=0263cca6a0c844c0b50c46ba4ae6d061] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:51.901 [http-nio-8080-exec-10] INFO  com.qj.back.utils.JwtUtil [traceId=00bdf69f2d404bb4ab46ac274e820105] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:52.380 [http-nio-8080-exec-7] INFO  com.qj.back.utils.JwtUtil [traceId=036edca5c7e54f129c18832a01980ba1] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:55.065 [http-nio-8080-exec-2] INFO  com.qj.back.utils.JwtUtil [traceId=cb7b07a8332547c1a3c9b1240a4e299f] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:08:55.520 [http-nio-8080-exec-3] INFO  com.qj.back.utils.JwtUtil [traceId=dd537a786f3f4074a91dbf1e35c2286c] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:09:02.209 [http-nio-8080-exec-4] INFO  com.qj.back.utils.JwtUtil [traceId=b4e811d977b24a42a5655e7625400cdc] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:09:06.131 [http-nio-8080-exec-6] INFO  com.qj.back.utils.JwtUtil [traceId=ed4263bf679e4372bcf7f26abfc8d357] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:09:06.945 [http-nio-8080-exec-5] INFO  com.qj.back.utils.JwtUtil [traceId=2ea1b733b94e4adeb12268240744e909] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:09:07.364 [http-nio-8080-exec-1] INFO  com.qj.back.utils.JwtUtil [traceId=8ff6ac421c284dd9a571725b74c7a21d] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:09:07.725 [http-nio-8080-exec-10] INFO  com.qj.back.utils.JwtUtil [traceId=4c1bbf96383948e3847565f639bd5afe] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:09:07.998 [http-nio-8080-exec-7] INFO  com.qj.back.utils.JwtUtil [traceId=0bf20883cc024bcb97d5041b65479d44] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:09:13.520 [http-nio-8080-exec-8] INFO  com.qj.back.utils.JwtUtil [traceId=81a857461ab54bca96746cbbe925a24d] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:09:13.722 [http-nio-8080-exec-2] INFO  com.qj.back.utils.JwtUtil [traceId=cf7ed902bd204e36914455f3eeda552e] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:09:13.938 [http-nio-8080-exec-3] INFO  com.qj.back.utils.JwtUtil [traceId=9fe75752289d489aa6cf24f132841759] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:09:14.155 [http-nio-8080-exec-9] INFO  com.qj.back.utils.JwtUtil [traceId=884ded99cbc24c289242f925eea1b24c] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:09:14.338 [http-nio-8080-exec-4] INFO  com.qj.back.utils.JwtUtil [traceId=faef6ff1d48a4633aad8c9423d972eea] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:09:15.854 [http-nio-8080-exec-8] INFO  com.qj.back.utils.JwtUtil [traceId=6e197109cbe549e08aee794e90903346] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":37,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":2,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":1,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+2026-04-21 21:16:24.835 [http-nio-8080-exec-6] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=614d8617-5b93-35ac-e5d1-f29b3f0c295a, status=CloseStatus[code=1000, reason=null], activeSessions=0
+2026-04-21 21:16:24.843 [http-nio-8080-exec-1] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=c3675fda-c395-7eab-0337-4adbeda618d3, activeSessions=1
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":37,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":2,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":1,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+2026-04-21 21:16:36.144 [http-nio-8080-exec-8] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=729d6fd1-ad3b-5418-7d46-99ce7b7579a7, activeSessions=2
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+2026-04-21 21:16:36.153 [http-nio-8080-exec-5] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=ed9afc4b738a43c7a96cd01c8a5e266e] - Êü•ËØ¢ÊâÄÊúâË°•ÂÖÖÈ°æÈóÆ
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":37,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":2,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":1,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":37,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":2,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":1,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+2026-04-21 21:16:38.764 [http-nio-8080-exec-10] INFO  com.qj.back.utils.JwtUtil [traceId=9942dab8c4584ea9ad9ee743830b034e] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:16:39.251 [http-nio-8080-exec-3] INFO  com.qj.back.utils.JwtUtil [traceId=456d455b4ea84f6dbfc09e8b70a79ba4] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:16:39.706 [http-nio-8080-exec-7] INFO  com.qj.back.utils.JwtUtil [traceId=379dc8fe04c0438188bb6c995a367b23] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:16:40.226 [http-nio-8080-exec-6] INFO  com.qj.back.utils.JwtUtil [traceId=52c049c2787c4496913b0c6c99e8c799] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:16:42.294 [http-nio-8080-exec-5] INFO  com.qj.back.utils.JwtUtil [traceId=e1a7f928a57643038b0cabdcb98e7b01] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:16:42.941 [http-nio-8080-exec-8] INFO  com.qj.back.utils.JwtUtil [traceId=4ac3dd5e68284861b7513042bc06af52] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:16:43.461 [http-nio-8080-exec-9] INFO  com.qj.back.utils.JwtUtil [traceId=2610db400263468f970fc53e3fc59cf3] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:16:44.893 [http-nio-8080-exec-1] INFO  com.qj.back.utils.JwtUtil [traceId=04096fb0cc62411c8a9e579f22c23eee] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:16:45.629 [http-nio-8080-exec-2] INFO  com.qj.back.utils.JwtUtil [traceId=4c8e6aef0c7a486187ef495184d77125] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:16:46.163 [http-nio-8080-exec-4] INFO  com.qj.back.utils.JwtUtil [traceId=c1196c9fa642404788c6c2ad1a5aed11] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:16:46.713 [http-nio-8080-exec-10] INFO  com.qj.back.utils.JwtUtil [traceId=bbd1d5b74fba4b399d3934272ff03728] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:16:47.249 [http-nio-8080-exec-3] INFO  com.qj.back.utils.JwtUtil [traceId=b365213fbd1a4b9dbd234c7ce61924f8] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:16:47.811 [http-nio-8080-exec-7] INFO  com.qj.back.utils.JwtUtil [traceId=56e0522a76b24d7cb42387d68991b90b] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:16:48.331 [http-nio-8080-exec-6] INFO  com.qj.back.utils.JwtUtil [traceId=cba2f7d191db495cb655820c8085ceb2] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:16:49.856 [http-nio-8080-exec-5] INFO  com.qj.back.utils.JwtUtil [traceId=1667df56102a4283b4e8b2bcf29a9e11] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:16:50.391 [http-nio-8080-exec-8] INFO  com.qj.back.utils.JwtUtil [traceId=f1aa577c09a542bd9ec3a7d0da7cb569] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:16:50.873 [http-nio-8080-exec-9] INFO  com.qj.back.utils.JwtUtil [traceId=2cb80f0ad0a544b98f8fa05f26b69eca] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:16:51.556 [http-nio-8080-exec-1] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=729d6fd1-ad3b-5418-7d46-99ce7b7579a7, status=CloseStatus[code=1000, reason=null], activeSessions=1
+2026-04-21 21:16:51.563 [http-nio-8080-exec-2] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=e978c953-13b9-8fee-2f1e-330b6a1543ef, activeSessions=2
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":38,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":2,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":1,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+2026-04-21 21:16:57.401 [http-nio-8080-exec-4] INFO  com.qj.back.utils.JwtUtil [traceId=dba944726cc64c1bbf94cd9cd352f3e9] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:16:58.571 [http-nio-8080-exec-7] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=84604a48-5740-1dee-dad7-ade2808f3fa0, activeSessions=3
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":38,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":2,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":1,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+2026-04-21 21:16:58.588 [http-nio-8080-exec-1] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=7b6063868a1648d6a43033afb6b80a8c] - Êü•ËØ¢ÊâÄÊúâË°•ÂÖÖÈ°æÈóÆ
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":38,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":2,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":1,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+2026-04-21 21:17:03.143 [http-nio-8080-exec-6] INFO  com.qj.back.utils.JwtUtil [traceId=ecadf45d70f3495ba708689afa275982] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:17:03.600 [http-nio-8080-exec-8] INFO  com.qj.back.utils.JwtUtil [traceId=1a5a53efab23416093f3ee72102ebbf6] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:17:06.204 [http-nio-8080-exec-4] INFO  com.qj.back.utils.JwtUtil [traceId=5b750c1610ff4f70884bde171fea9f14] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:17:06.654 [http-nio-8080-exec-10] INFO  com.qj.back.utils.JwtUtil [traceId=15692a99533148749cebec5a3ed91965] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:17:08.310 [http-nio-8080-exec-1] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=84604a48-5740-1dee-dad7-ade2808f3fa0, status=CloseStatus[code=1000, reason=null], activeSessions=2
+2026-04-21 21:17:08.316 [http-nio-8080-exec-3] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=56eb57a9-8a98-3fd8-169c-5ab0a7a1227c, activeSessions=3
+2026-04-21 21:17:08.321 [http-nio-8080-exec-7] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=9851e5f8ce2e4aac9ec34da5fbcd3090] - Êü•ËØ¢ÊâÄÊúâË°•ÂÖÖÈ°æÈóÆ
+2026-04-21 21:17:09.033 [http-nio-8080-exec-5] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=3a2f5da7-ea53-8005-8770-373b1443b133, activeSessions=4
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+2026-04-21 21:17:09.043 [http-nio-8080-exec-6] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=04cd1be054f7451d83e1bb74b9f3bf7b] - Êü•ËØ¢ÊâÄÊúâË°•ÂÖÖÈ°æÈóÆ
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":38,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":2,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":1,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":38,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":2,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":1,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+2026-04-21 21:17:13.506 [http-nio-8080-exec-10] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=3a2f5da7-ea53-8005-8770-373b1443b133, status=CloseStatus[code=1000, reason=null], activeSessions=3
+2026-04-21 21:17:13.513 [http-nio-8080-exec-1] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=285c862a-ac6a-8e39-4f35-738fabc69ad8, activeSessions=4
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":38,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":2,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":1,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+2026-04-21 21:17:24.876 [http-nio-8080-exec-2] INFO  com.qj.back.utils.JwtUtil [traceId=63e25756a08744ea920a4ab2b4f890ab] - È™åËØÅtoken: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzY4NDQsImV4cCI6MTc3Njg2MzI0NH0.NsW46jaKnvdQ-CIvQSwp5oMeQMfZpgb3z9n6aPOSbNM
+2026-04-21 21:17:25.698 [http-nio-8080-exec-8] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=c9384acd-fc3d-2506-c385-2fe7a13fd765, activeSessions=5
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+2026-04-21 21:17:25.708 [http-nio-8080-exec-9] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=9cbb59da30954762be4188886b909811] - Êü•ËØ¢ÊâÄÊúâË°•ÂÖÖÈ°æÈóÆ
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":38,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":2,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":1,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":38,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":2,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":1,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+2026-04-21 21:17:29.021 [http-nio-8080-exec-7] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=c9384acd-fc3d-2506-c385-2fe7a13fd765, status=CloseStatus[code=1000, reason=null], activeSessions=4
+2026-04-21 21:17:29.026 [http-nio-8080-exec-10] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=4c5436ba-4147-3277-6070-b35c630c755d, activeSessions=5
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":38,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":2,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":1,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+2026-04-21 21:17:31.032 [http-nio-8080-exec-6] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=7a016c49-a5f7-0f39-ff39-fd9bb5abf964, activeSessions=6
+2026-04-21 21:17:35.430 [http-nio-8080-exec-5] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=7a016c49-a5f7-0f39-ff39-fd9bb5abf964, status=CloseStatus[code=1000, reason=null], activeSessions=5
+2026-04-21 21:17:35.438 [http-nio-8080-exec-7] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=086f894a-d48b-10c2-48a0-d07d1e4018f5, activeSessions=6
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+2026-04-21 21:17:35.448 [http-nio-8080-exec-10] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=bf09b1b466524d86b70cf1de7d364cce] - Êü•ËØ¢ÊâÄÊúâË°•ÂÖÖÈ°æÈóÆ
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":38,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":2,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":1,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+ªÒ»°πÀŒ ¡–±Ì«Î«Û
+ ˝æ›ø‚∑µªÿπÀŒ  ˝¡ø: 115
+µ⁄“ªÃıπÀŒ  ˝æ›: {"id":5,"name":"’≈”Ó157","description":"","status":1,"type":1,"sortOrder":13,"countNormal":38,"orderStatusNormal":1,"waitingNormal":0,"countSem":7,"orderStatusSem":1,"waitingSem":0,"countSingle1":2,"orderStatusSingle1":1,"waitingSingle1":0,"countExtra1":1,"orderStatusExtra1":1,"waitingExtra1":0,"countExtra2":0,"orderStatusExtra2":1,"waitingExtra2":0,"countExtra3":0,"orderStatusExtra3":1,"waitingExtra3":0}
+2026-04-21 21:17:37.450 [http-nio-8080-exec-2] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=2b719ba7-03d8-fb1a-644f-42f68365c2d0, activeSessions=7

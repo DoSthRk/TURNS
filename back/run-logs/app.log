@@ -1,0 +1,47 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.6.13)
+
+2026-04-21 21:06:17.445 [main] INFO  com.qj.back.BackApplication [traceId=N/A] - Starting BackApplication using Java 1.8.0_481 on GM-DosthRk with PID 26064 (D:\dev-project\TURNS\back\target\back-0.0.1-SNAPSHOT.jar started by dosth in D:\dev-project\TURNS\back)
+2026-04-21 21:06:17.456 [main] INFO  com.qj.back.BackApplication [traceId=N/A] - No active profile set, falling back to 1 default profile: "default"
+2026-04-21 21:06:18.935 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [traceId=N/A] - Tomcat initialized with port(s): 8080 (http)
+2026-04-21 21:06:18.947 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [traceId=N/A] - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-21 21:06:18.948 [main] INFO  org.apache.catalina.core.StandardService [traceId=N/A] - Starting service [Tomcat]
+2026-04-21 21:06:18.948 [main] INFO  org.apache.catalina.core.StandardEngine [traceId=N/A] - Starting Servlet engine: [Apache Tomcat/9.0.68]
+2026-04-21 21:06:19.119 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [traceId=N/A] - Initializing Spring embedded WebApplicationContext
+2026-04-21 21:06:19.120 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [traceId=N/A] - Root WebApplicationContext: initialization completed in 1620 ms
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.4.1 
+2026-04-21 21:06:20.235 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper [traceId=N/A] - This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.qj.back.entity.Advice"
+2026-04-21 21:06:20.239 [main] WARN  c.b.mybatisplus.core.injector.AbstractMethod [traceId=N/A] - [com.qj.back.mapper.AdviceMapper.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2026-04-21 21:06:20.242 [main] WARN  c.b.mybatisplus.core.injector.AbstractMethod [traceId=N/A] - [com.qj.back.mapper.AdviceMapper.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2026-04-21 21:06:20.258 [main] WARN  c.b.mybatisplus.core.injector.AbstractMethod [traceId=N/A] - [com.qj.back.mapper.AdviceMapper.selectList] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.SelectList]
+2026-04-21 21:06:20.348 [main] WARN  c.b.mybatisplus.core.injector.AbstractMethod [traceId=N/A] - [com.qj.back.mapper.ComplementMapper.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2026-04-21 21:06:20.355 [main] WARN  c.b.mybatisplus.core.injector.AbstractMethod [traceId=N/A] - [com.qj.back.mapper.ComplementMapper.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2026-04-21 21:06:20.357 [main] WARN  c.b.mybatisplus.core.injector.AbstractMethod [traceId=N/A] - [com.qj.back.mapper.ComplementMapper.update] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Update]
+2026-04-21 21:06:20.607 [main] INFO  com.zaxxer.hikari.HikariDataSource [traceId=N/A] - HikariPool-1 - Starting...
+2026-04-21 21:06:20.754 [main] INFO  com.zaxxer.hikari.HikariDataSource [traceId=N/A] - HikariPool-1 - Start completed.
+2026-04-21 21:06:20.858 [main] INFO  c.q.back.service.Impl.ShiftModuleConfigServiceImpl [traceId=N/A] - Added column count_extra1 to consultants
+2026-04-21 21:06:20.901 [main] INFO  c.q.back.service.Impl.ShiftModuleConfigServiceImpl [traceId=N/A] - Added column order_status_extra1 to consultants
+2026-04-21 21:06:20.950 [main] INFO  c.q.back.service.Impl.ShiftModuleConfigServiceImpl [traceId=N/A] - Added column waiting_extra1 to consultants
+2026-04-21 21:06:20.989 [main] INFO  c.q.back.service.Impl.ShiftModuleConfigServiceImpl [traceId=N/A] - Added column count_extra2 to consultants
+2026-04-21 21:06:21.024 [main] INFO  c.q.back.service.Impl.ShiftModuleConfigServiceImpl [traceId=N/A] - Added column order_status_extra2 to consultants
+2026-04-21 21:06:21.061 [main] INFO  c.q.back.service.Impl.ShiftModuleConfigServiceImpl [traceId=N/A] - Added column waiting_extra2 to consultants
+2026-04-21 21:06:21.100 [main] INFO  c.q.back.service.Impl.ShiftModuleConfigServiceImpl [traceId=N/A] - Added column count_extra3 to consultants
+2026-04-21 21:06:21.138 [main] INFO  c.q.back.service.Impl.ShiftModuleConfigServiceImpl [traceId=N/A] - Added column order_status_extra3 to consultants
+2026-04-21 21:06:21.175 [main] INFO  c.q.back.service.Impl.ShiftModuleConfigServiceImpl [traceId=N/A] - Added column waiting_extra3 to consultants
+2026-04-21 21:06:21.726 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping [traceId=N/A] - Adding welcome page: class path resource [static/index.html]
+2026-04-21 21:06:21.905 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [traceId=N/A] - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-21 21:06:21.937 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [traceId=N/A] - Tomcat started on port(s): 8080 (http) with context path ''
+2026-04-21 21:06:21.949 [main] INFO  com.qj.back.BackApplication [traceId=N/A] - Started BackApplication in 4.934 seconds (JVM running for 5.291)
+2026-04-21 21:06:22.069 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [traceId=N/A] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-21 21:06:22.069 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet [traceId=N/A] - Initializing Servlet 'dispatcherServlet'
+2026-04-21 21:06:22.071 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet [traceId=N/A] - Completed initialization in 1 ms
+2026-04-21 21:06:22.187 [http-nio-8080-exec-1] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=a34d5ccf-8ebb-a966-5e2b-db113e57ca33, activeSessions=1

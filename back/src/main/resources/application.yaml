@@ -1,0 +1,47 @@
+server:
+  port: 8080
+  shutdown: graceful
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: D:/dev-project/TURNS/back/run-logs
+      prefix: access
+      suffix: .log
+      file-date-format: .yyyy-MM-dd
+      pattern: '%t %a "%r" %s %D'
+
+spring:
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  datasource:
+    url: jdbc:mysql://localhost:3306/lumi2024?useSSL=false&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: qianjin
+    hikari:
+      minimum-idle: 2
+      maximum-pool-size: 10
+      connection-timeout: 10000
+      validation-timeout: 3000
+      idle-timeout: 300000
+      max-lifetime: 1800000
+      keepalive-time: 120000
+      leak-detection-threshold: 60000
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+
+file:
+  upload-path: D:/dev-project/TURNS/uploads/
+  access-path: http://localhost:8080/uploads/
+
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    root: INFO
+    com.qj.back: INFO
+    com.zaxxer.hikari: INFO
+    org.springframework.web: INFO

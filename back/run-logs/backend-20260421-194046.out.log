@@ -1,0 +1,202 @@
+Listening for transport dt_socket at address: 5005
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.6.13)
+
+2026-04-21 19:40:47.261 [main] INFO  com.qj.back.BackApplication [traceId=N/A] - Starting BackApplication using Java 21.0.7 on DoSthRk with PID 417884 (D:\WorkPlace\TURNS\back\target\back-0.0.1-SNAPSHOT.jar started by Administrator in D:\WorkPlace\TURNS)
+2026-04-21 19:40:47.265 [main] INFO  com.qj.back.BackApplication [traceId=N/A] - No active profile set, falling back to 1 default profile: "default"
+2026-04-21 19:40:48.137 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [traceId=N/A] - Tomcat initialized with port(s): 8080 (http)
+2026-04-21 19:40:48.146 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [traceId=N/A] - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-21 19:40:48.146 [main] INFO  org.apache.catalina.core.StandardService [traceId=N/A] - Starting service [Tomcat]
+2026-04-21 19:40:48.147 [main] INFO  org.apache.catalina.core.StandardEngine [traceId=N/A] - Starting Servlet engine: [Apache Tomcat/9.0.68]
+2026-04-21 19:40:48.191 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [traceId=N/A] - Initializing Spring embedded WebApplicationContext
+2026-04-21 19:40:48.191 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [traceId=N/A] - Root WebApplicationContext: initialization completed in 892 ms
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.4.1 
+2026-04-21 19:40:48.552 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper [traceId=N/A] - This primary key of "id" is primitive !ä¸å»ºè®®å¦‚æ­¤è¯·ä½¿ç”¨åŒ…è£…ç±» in Class: "com.qj.back.entity.Advice"
+2026-04-21 19:40:48.555 [main] WARN  c.b.mybatisplus.core.injector.AbstractMethod [traceId=N/A] - [com.qj.back.mapper.AdviceMapper.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2026-04-21 19:40:48.560 [main] WARN  c.b.mybatisplus.core.injector.AbstractMethod [traceId=N/A] - [com.qj.back.mapper.AdviceMapper.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2026-04-21 19:40:48.577 [main] WARN  c.b.mybatisplus.core.injector.AbstractMethod [traceId=N/A] - [com.qj.back.mapper.AdviceMapper.selectList] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.SelectList]
+2026-04-21 19:40:48.680 [main] WARN  c.b.mybatisplus.core.injector.AbstractMethod [traceId=N/A] - [com.qj.back.mapper.ComplementMapper.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2026-04-21 19:40:48.686 [main] WARN  c.b.mybatisplus.core.injector.AbstractMethod [traceId=N/A] - [com.qj.back.mapper.ComplementMapper.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2026-04-21 19:40:48.690 [main] WARN  c.b.mybatisplus.core.injector.AbstractMethod [traceId=N/A] - [com.qj.back.mapper.ComplementMapper.update] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Update]
+2026-04-21 19:40:48.947 [main] INFO  com.zaxxer.hikari.HikariDataSource [traceId=N/A] - HikariPool-1 - Starting...
+2026-04-21 19:40:49.033 [main] INFO  com.zaxxer.hikari.HikariDataSource [traceId=N/A] - HikariPool-1 - Start completed.
+2026-04-21 19:40:49.229 [main] INFO  c.qj.back.service.Impl.ShiftTypeConfigServiceImpl [traceId=N/A] - Initialized default shift type configs
+2026-04-21 19:40:49.382 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping [traceId=N/A] - Adding welcome page: class path resource [static/index.html]
+2026-04-21 19:40:49.448 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [traceId=N/A] - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-21 19:40:49.464 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [traceId=N/A] - Tomcat started on port(s): 8080 (http) with context path ''
+2026-04-21 19:40:49.469 [main] INFO  com.qj.back.BackApplication [traceId=N/A] - Started BackApplication in 2.638 seconds (JVM running for 2.934)
+2026-04-21 19:40:51.779 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [traceId=N/A] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-21 19:40:51.780 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet [traceId=N/A] - Initializing Servlet 'dispatcherServlet'
+2026-04-21 19:40:51.780 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet [traceId=N/A] - Completed initialization in 0 ms
+2026-04-21 19:40:51.837 [http-nio-8080-exec-1] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=9d145815-1b62-7931-fe04-c0303a43ff4d, activeSessions=1
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 19:50:31.563 [http-nio-8080-exec-7] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=9d145815-1b62-7931-fe04-c0303a43ff4d, status=CloseStatus[code=1001, reason=null], activeSessions=0
+2026-04-21 19:50:31.762 [http-nio-8080-exec-8] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=97b47e51-e0ab-27d1-8c52-ba8e6f302aac, activeSessions=1
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:50:31.777 [http-nio-8080-exec-1] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=99d42d00c33a4484b599bc9acc111427] - æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 19:50:58.914 [http-nio-8080-exec-10] INFO  com.qj.back.utils.JwtUtil [traceId=e3631d55f80a430cbda42135fe55d27c] - éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzAzMDQsImV4cCI6MTc3Njg1NjcwNH0.zx-o6VjmKppB_yhqQaLS472ax4ZuhzuvIqGZ_GsD1EU
+2026-04-21 19:50:58.930 [http-nio-8080-exec-10] ERROR com.qj.back.utils.JwtUtil [traceId=e3631d55f80a430cbda42135fe55d27c] - tokenéªŒè¯å¤±è´¥
+io.jsonwebtoken.security.SignatureException: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:399)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:529)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:589)
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173)
+	at com.qj.back.utils.JwtUtil.validateToken(JwtUtil.java:34)
+	at com.qj.back.controller.ShiftModuleConfigController.verifyAdmin(ShiftModuleConfigController.java:123)
+	at com.qj.back.controller.ShiftModuleConfigController.saveTypeOptions(ShiftModuleConfigController.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.qj.back.config.TraceIdFilter.doFilterInternal(TraceIdFilter.java:30)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-04-21 19:50:58.939 [http-nio-8080-exec-5] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=97b47e51-e0ab-27d1-8c52-ba8e6f302aac, status=CloseStatus[code=1000, reason=null], activeSessions=0
+2026-04-21 19:51:05.618 [http-nio-8080-exec-1] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=d04c9ff5-d165-d893-7468-fd3479eb1cfe, activeSessions=1
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:51:05.632 [http-nio-8080-exec-6] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=24e41392d4b84d09aede70e52122c1b3] - æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 19:51:14.238 [http-nio-8080-exec-9] INFO  com.qj.back.utils.JwtUtil [traceId=b23422199bfa4d05b3c4b3c13d9766b8] - éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzIyNjUsImV4cCI6MTc3Njg1ODY2NX0.7VX_WZIYAaP-ctbC3lcHn8IW5u6MGsriU2ifZzvQUFU
+2026-04-21 19:51:17.182 [http-nio-8080-exec-10] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=d04c9ff5-d165-d893-7468-fd3479eb1cfe, status=CloseStatus[code=1001, reason=null], activeSessions=0
+2026-04-21 19:51:17.246 [http-nio-8080-exec-5] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=eec6752f-26ab-565f-2e01-3c8b7c5b7f6c, activeSessions=1
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:51:17.254 [http-nio-8080-exec-3] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=1d5b37cb70a6442e9f8fa239a17d5676] - æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 19:54:52.232 [http-nio-8080-exec-5] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=eec6752f-26ab-565f-2e01-3c8b7c5b7f6c, status=CloseStatus[code=1000, reason=null], activeSessions=0
+2026-04-21 19:54:52.238 [http-nio-8080-exec-10] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=7be2e4af-ea3a-ad8d-62b0-e98086ba9125, activeSessions=1
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:54:52.252 [http-nio-8080-exec-5] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=6f6b981a7ceb4c81b33f249c3af1ff91] - æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 19:54:54.260 [http-nio-8080-exec-9] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=44229c37-bafc-7584-5282-0ec8f6b17921, activeSessions=2
+2026-04-21 19:55:04.850 [http-nio-8080-exec-4] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=44229c37-bafc-7584-5282-0ec8f6b17921, status=CloseStatus[code=1000, reason=null], activeSessions=1
+2026-04-21 19:55:04.855 [http-nio-8080-exec-6] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=e4ba9e57-cc8d-1631-979e-70991b591a26, activeSessions=2
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:55:04.864 [http-nio-8080-exec-2] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=f9aaef40fc044a2585fefccfbada04e6] - æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 19:55:06.864 [http-nio-8080-exec-3] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=9b56321a-331a-cad9-0fe2-a8d11bfa1a30, activeSessions=3
+2026-04-21 19:55:39.587 [http-nio-8080-exec-6] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=7be2e4af-ea3a-ad8d-62b0-e98086ba9125, status=CloseStatus[code=1001, reason=null], activeSessions=1
+2026-04-21 19:55:39.587 [http-nio-8080-exec-4] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=e4ba9e57-cc8d-1631-979e-70991b591a26, status=CloseStatus[code=1001, reason=null], activeSessions=0
+2026-04-21 19:55:39.587 [http-nio-8080-exec-9] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=9b56321a-331a-cad9-0fe2-a8d11bfa1a30, status=CloseStatus[code=1001, reason=null], activeSessions=1
+2026-04-21 19:55:39.971 [http-nio-8080-exec-2] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=63c2d509-6006-999a-15a4-926616c19ac2, activeSessions=1
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 19:55:39.986 [http-nio-8080-exec-7] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=7a7560cf9b1d4d5b930498f44fc9dc39] - æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+2026-04-21 19:55:53.589 [http-nio-8080-exec-1] INFO  com.qj.back.utils.JwtUtil [traceId=1037e83c4d7a46a8b44c4aae0b77a765] - éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzIyNjUsImV4cCI6MTc3Njg1ODY2NX0.7VX_WZIYAaP-ctbC3lcHn8IW5u6MGsriU2ifZzvQUFU
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 19:56:06.066 [http-nio-8080-exec-1] INFO  com.qj.back.utils.JwtUtil [traceId=84c74c7224af42f48a50c27a794af99f] - éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzIyNjUsImV4cCI6MTc3Njg1ODY2NX0.7VX_WZIYAaP-ctbC3lcHn8IW5u6MGsriU2ifZzvQUFU
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+Ìí¼Ó¹ËÎÊ: {"name":"²âÊÔ2","status":1,"type":13,"sortOrder":1,"countNormal":0,"orderStatusNormal":1,"waitingNormal":0,"countSem":0,"orderStatusSem":1,"waitingSem":0,"countSingle1":0,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 159
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 19:56:30.272 [http-nio-8080-exec-1] INFO  com.qj.back.utils.JwtUtil [traceId=af855e21e4244b959d28bcb3679db8de] - éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzIyNjUsImV4cCI6MTc3Njg1ODY2NX0.7VX_WZIYAaP-ctbC3lcHn8IW5u6MGsriU2ifZzvQUFU
+2026-04-21 19:56:35.275 [http-nio-8080-exec-5] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=63c2d509-6006-999a-15a4-926616c19ac2, status=CloseStatus[code=1001, reason=null], activeSessions=0
+2026-04-21 19:56:35.530 [http-nio-8080-exec-6] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=45d84c3d-eb2c-6318-f31a-d6be8ab94db6, activeSessions=1
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:56:35.538 [http-nio-8080-exec-6] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=b168f26bf3ff4f42acb85ed06cd559d9] - æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 159
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 159
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 19:56:39.771 [http-nio-8080-exec-10] INFO  com.qj.back.utils.JwtUtil [traceId=95cd00881b6343d297a5089e831c3066] - éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzIyNjUsImV4cCI6MTc3Njg1ODY2NX0.7VX_WZIYAaP-ctbC3lcHn8IW5u6MGsriU2ifZzvQUFU
+2026-04-21 19:56:40.201 [http-nio-8080-exec-8] INFO  com.qj.back.utils.JwtUtil [traceId=2adc50b872714fea8db161b31f0b1307] - éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzIyNjUsImV4cCI6MTc3Njg1ODY2NX0.7VX_WZIYAaP-ctbC3lcHn8IW5u6MGsriU2ifZzvQUFU
+2026-04-21 19:56:46.127 [http-nio-8080-exec-6] INFO  com.qj.back.utils.JwtUtil [traceId=fa8559d2706641eda564d59fb3af094f] - éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzIyNjUsImV4cCI6MTc3Njg1ODY2NX0.7VX_WZIYAaP-ctbC3lcHn8IW5u6MGsriU2ifZzvQUFU
+2026-04-21 19:56:46.571 [http-nio-8080-exec-4] INFO  com.qj.back.utils.JwtUtil [traceId=c1654189b41d470091b3e2e34cb2185f] - éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzIyNjUsImV4cCI6MTc3Njg1ODY2NX0.7VX_WZIYAaP-ctbC3lcHn8IW5u6MGsriU2ifZzvQUFU
+2026-04-21 19:56:46.959 [http-nio-8080-exec-1] INFO  com.qj.back.utils.JwtUtil [traceId=a2210ff0b9ac4cde98efeb0fd7856902] - éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzIyNjUsImV4cCI6MTc3Njg1ODY2NX0.7VX_WZIYAaP-ctbC3lcHn8IW5u6MGsriU2ifZzvQUFU
+2026-04-21 19:56:47.308 [http-nio-8080-exec-3] INFO  com.qj.back.utils.JwtUtil [traceId=538779056334409fa7037f6972b9e6f1] - éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzIyNjUsImV4cCI6MTc3Njg1ODY2NX0.7VX_WZIYAaP-ctbC3lcHn8IW5u6MGsriU2ifZzvQUFU
+2026-04-21 19:56:48.466 [http-nio-8080-exec-9] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=45d84c3d-eb2c-6318-f31a-d6be8ab94db6, status=CloseStatus[code=1001, reason=null], activeSessions=0
+2026-04-21 19:56:48.537 [http-nio-8080-exec-10] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=e83ad0e2-93b4-29eb-9413-500df8bda1c5, activeSessions=1
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:56:48.545 [http-nio-8080-exec-10] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=43273c66aa864330b597249470e9f5e2] - æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 159
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 159
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}

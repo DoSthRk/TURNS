@@ -1,0 +1,405 @@
+Listening for transport dt_socket at address: 5005
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.6.13)
+
+2026-04-21 18:29:38.189  INFO 421264 --- [           main] com.qj.back.BackApplication              : Starting BackApplication using Java 21.0.7 on DoSthRk with PID 421264 (D:\WorkPlace\TURNS\back\target\back-0.0.1-SNAPSHOT.jar started by Administrator in D:\WorkPlace\TURNS\back)
+2026-04-21 18:29:38.193  INFO 421264 --- [           main] com.qj.back.BackApplication              : No active profile set, falling back to 1 default profile: "default"
+2026-04-21 18:29:39.090  INFO 421264 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-04-21 18:29:39.097  INFO 421264 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-21 18:29:39.097  INFO 421264 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2026-04-21 18:29:39.154  INFO 421264 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-21 18:29:39.154  INFO 421264 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 930 ms
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.4.1 
+2026-04-21 18:29:39.510  WARN 421264 --- [           main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !ä¸å»ºè®®å¦‚æ­¤è¯·ä½¿ç”¨åŒ…è£…ç±» in Class: "com.qj.back.entity.Advice"
+2026-04-21 18:29:39.512  WARN 421264 --- [           main] c.b.m.core.injector.AbstractMethod       : [com.qj.back.mapper.AdviceMapper.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2026-04-21 18:29:39.517  WARN 421264 --- [           main] c.b.m.core.injector.AbstractMethod       : [com.qj.back.mapper.AdviceMapper.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2026-04-21 18:29:39.535  WARN 421264 --- [           main] c.b.m.core.injector.AbstractMethod       : [com.qj.back.mapper.AdviceMapper.selectList] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.SelectList]
+2026-04-21 18:29:39.621  WARN 421264 --- [           main] c.b.m.core.injector.AbstractMethod       : [com.qj.back.mapper.ComplementMapper.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2026-04-21 18:29:39.627  WARN 421264 --- [           main] c.b.m.core.injector.AbstractMethod       : [com.qj.back.mapper.ComplementMapper.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2026-04-21 18:29:39.630  WARN 421264 --- [           main] c.b.m.core.injector.AbstractMethod       : [com.qj.back.mapper.ComplementMapper.update] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Update]
+2026-04-21 18:29:40.013  INFO 421264 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-04-21 18:29:40.106  INFO 421264 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2026-04-21 18:29:40.111  INFO 421264 --- [           main] com.qj.back.BackApplication              : Started BackApplication in 2.25 seconds (JVM running for 2.541)
+2026-04-21 18:29:58.373  INFO 421264 --- [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-21 18:29:58.374  INFO 421264 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-21 18:29:58.374  INFO 421264 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 18:29:58.415  INFO 421264 --- [nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-21 18:29:58.532  INFO 421264 --- [nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 18:39:09.816  INFO 421264 --- [nio-8080-exec-3] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+WebSocketÁ¬½ÓÒÑ½¨Á¢£¬sessionId=d2b6e2bf-2e3a-d8a0-d4f5-54fddbdfd221
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+WebSocketÁ¬½ÓÒÑ¹Ø±Õ£¬sessionId=d2b6e2bf-2e3a-d8a0-d4f5-54fddbdfd221
+WebSocketÁ¬½ÓÒÑ½¨Á¢£¬sessionId=ddb8be62-8214-97ed-4b1c-279097448117
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 18:40:04.462  INFO 421264 --- [nio-8080-exec-4] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+WebSocketÁ¬½ÓÒÑ¹Ø±Õ£¬sessionId=ddb8be62-8214-97ed-4b1c-279097448117
+WebSocketÁ¬½ÓÒÑ½¨Á¢£¬sessionId=5f175bbc-a369-6f9f-aed1-72a3c2a7666a
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 18:40:11.309  INFO 421264 --- [nio-8080-exec-9] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+WebSocketÁ¬½ÓÒÑ¹Ø±Õ£¬sessionId=5f175bbc-a369-6f9f-aed1-72a3c2a7666a
+WebSocketÁ¬½ÓÒÑ½¨Á¢£¬sessionId=610f6471-68ce-431a-81f9-b64119ec235d
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 18:41:13.759  INFO 421264 --- [nio-8080-exec-4] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 18:50:35.820 ERROR 421264 --- [nio-8080-exec-3] c.q.b.controller.AccountTypeController   : è·å–è´¦å·ç±»å‹åˆ—è¡¨å¤±è´¥:
+
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'lumi2024.account_type' doesn't exist
+### The error may exist in com/qj/back/mapper/AccountTypeMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT * FROM account_type WHERE status = 1 ORDER BY group_name, display_order
+### Cause: java.sql.SQLSyntaxErrorException: Table 'lumi2024.account_type' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'lumi2024.account_type' doesn't exist
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239) ~[spring-jdbc-5.3.23.jar!/:5.3.23]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70) ~[spring-jdbc-5.3.23.jar!/:5.3.23]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88) ~[mybatis-spring-2.0.5.jar!/:2.0.5]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440) ~[mybatis-spring-2.0.5.jar!/:2.0.5]
+	at jdk.proxy2/jdk.proxy2.$Proxy71.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:223) ~[mybatis-spring-2.0.5.jar!/:2.0.5]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:173) ~[mybatis-plus-core-3.4.1.jar!/:3.4.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:78) ~[mybatis-plus-core-3.4.1.jar!/:3.4.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148) ~[mybatis-plus-core-3.4.1.jar!/:3.4.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.4.1.jar!/:3.4.1]
+	at jdk.proxy2/jdk.proxy2.$Proxy76.selectAllEnabled(Unknown Source) ~[na:na]
+	at com.qj.back.service.Impl.AccountTypeServiceImpl.getAllEnabledAccountTypes(AccountTypeServiceImpl.java:32) ~[classes!/:na]
+	at com.qj.back.service.Impl.AccountTypeServiceImpl$$FastClassBySpringCGLIB$$b0c2e684.invoke(<generated>) ~[classes!/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at com.qj.back.service.Impl.AccountTypeServiceImpl$$EnhancerBySpringCGLIB$$738bf638.getAllEnabledAccountTypes(<generated>) ~[classes!/:na]
+	at com.qj.back.controller.AccountTypeController.getAllAccountTypes(AccountTypeController.java:37) ~[classes!/:na]
+	at com.qj.back.controller.AccountTypeController$$FastClassBySpringCGLIB$$81f8a2f0.invoke(<generated>) ~[classes!/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at com.qj.back.controller.AccountTypeController$$EnhancerBySpringCGLIB$$7d29484a.getAllAccountTypes(<generated>) ~[classes!/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:670) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.68.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: java.sql.SQLSyntaxErrorException: Table 'lumi2024.account_type' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-j-8.0.31.jar!/:8.0.31]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.31.jar!/:8.0.31]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.31.jar!/:8.0.31]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354) ~[mysql-connector-j-8.0.31.jar!/:8.0.31]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-4.0.3.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-4.0.3.jar!/:na]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64) ~[mybatis-3.5.6.jar!/:3.5.6]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79) ~[mybatis-3.5.6.jar!/:3.5.6]
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:69) ~[mybatis-plus-core-3.4.1.jar!/:3.4.1]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325) ~[mybatis-3.5.6.jar!/:3.5.6]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.5.6.jar!/:3.5.6]
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:165) ~[mybatis-plus-core-3.4.1.jar!/:3.4.1]
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:92) ~[mybatis-plus-core-3.4.1.jar!/:3.4.1]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.6.jar!/:3.5.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140) ~[mybatis-3.5.6.jar!/:3.5.6]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426) ~[mybatis-spring-2.0.5.jar!/:2.0.5]
+	... 73 common frames omitted
+
+WebSocketÁ¬½ÓÒÑ¹Ø±Õ£¬sessionId=610f6471-68ce-431a-81f9-b64119ec235d
+WebSocketÁ¬½ÓÒÑ½¨Á¢£¬sessionId=ea7ccb6d-f910-6a16-a191-2e1963c27112
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 18:51:14.334  INFO 421264 --- [io-8080-exec-10] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+WebSocketÁ¬½ÓÒÑ½¨Á¢£¬sessionId=92c569fb-da11-606e-04b1-7a141dd4472e
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+WebSocketÁ¬½ÓÒÑ¹Ø±Õ£¬sessionId=ea7ccb6d-f910-6a16-a191-2e1963c27112
+WebSocketÁ¬½ÓÒÑ¹Ø±Õ£¬sessionId=92c569fb-da11-606e-04b1-7a141dd4472e
+WebSocketÁ¬½ÓÒÑ½¨Á¢£¬sessionId=54582a17-27a9-060d-a53d-6106597479a2
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 18:52:42.426  INFO 421264 --- [nio-8080-exec-1] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 18:52:47.683  INFO 421264 --- [nio-8080-exec-9] com.qj.back.utils.JwtUtil                : éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzQyNjc3NDUsImV4cCI6MTc3NDM1NDE0NX0.O2jxe-vKjPe5cUloSixg-ulxsFdjkr7XCanFF1MwmJs
+2026-04-21 18:52:47.699 ERROR 421264 --- [nio-8080-exec-9] com.qj.back.utils.JwtUtil                : tokenéªŒè¯å¤±è´¥
+
+io.jsonwebtoken.security.SignatureException: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:399) ~[jjwt-impl-0.11.5.jar!/:0.11.5]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:529) ~[jjwt-impl-0.11.5.jar!/:0.11.5]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:589) ~[jjwt-impl-0.11.5.jar!/:0.11.5]
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173) ~[jjwt-impl-0.11.5.jar!/:0.11.5]
+	at com.qj.back.utils.JwtUtil.validateToken(JwtUtil.java:36) ~[classes!/:na]
+	at com.qj.back.controller.ConsultantsController.updateConsultants(ConsultantsController.java:113) ~[classes!/:na]
+	at com.qj.back.controller.ConsultantsController$$FastClassBySpringCGLIB$$1820ec01.invoke(<generated>) ~[classes!/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at com.qj.back.controller.LogAspect.around(LogAspect.java:43) ~[classes!/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:634) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:624) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:72) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708) ~[spring-aop-5.3.23.jar!/:5.3.23]
+	at com.qj.back.controller.ConsultantsController$$EnhancerBySpringCGLIB$$8a517ba5.updateConsultants(<generated>) ~[classes!/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.68.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.68.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+WebSocketÁ¬½ÓÒÑ¹Ø±Õ£¬sessionId=54582a17-27a9-060d-a53d-6106597479a2
+WebSocketÁ¬½ÓÒÑ½¨Á¢£¬sessionId=a8d6df20-211c-4f9e-b98d-ec88e2faf1cd
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 18:52:54.849  INFO 421264 --- [nio-8080-exec-2] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 18:52:57.231  INFO 421264 --- [io-8080-exec-10] com.qj.back.utils.JwtUtil                : éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3Njg3NzQsImV4cCI6MTc3Njg1NTE3NH0.HHrq4RxRZxyI9CKV8yKR6AYnQ-Nfkj-RQM8ijxibSJY
+×¼±¸Ïò 1 ¸ö¿Í»§¶Ë·¢ËÍÏûÏ¢: {"id":370,"name":"Ê·Êçç÷lumist777","password":null,"phoneNumber":null,"description":"","status":1,"type":4,"sortOrder":2,"supportedAccountTypes":null,"accountTypeStatus":null,"countNormal":11,"orderStatusNormal":1,"waitingNormal":0,"countSem":0,"orderStatusSem":1,"waitingSem":1,"countSingle1":0,"orderStatusSingle1":1,"waitingSingle1":0}
+³É¹¦·¢ËÍÏûÏ¢µ½ sessionId=a8d6df20-211c-4f9e-b98d-ec88e2faf1cd
+2026-04-21 18:52:57.267  INFO 421264 --- [nio-8080-exec-7] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+2026-04-21 18:52:58.127  INFO 421264 --- [nio-8080-exec-1] com.qj.back.utils.JwtUtil                : éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3Njg3NzQsImV4cCI6MTc3Njg1NTE3NH0.HHrq4RxRZxyI9CKV8yKR6AYnQ-Nfkj-RQM8ijxibSJY
+×¼±¸Ïò 1 ¸ö¿Í»§¶Ë·¢ËÍÏûÏ¢: {"id":370,"name":"Ê·Êçç÷lumist777","password":null,"phoneNumber":null,"description":"","status":1,"type":4,"sortOrder":2,"supportedAccountTypes":null,"accountTypeStatus":null,"countNormal":11,"orderStatusNormal":1,"waitingNormal":0,"countSem":1,"orderStatusSem":1,"waitingSem":0,"countSingle1":0,"orderStatusSingle1":1,"waitingSingle1":0}
+³É¹¦·¢ËÍÏûÏ¢µ½ sessionId=a8d6df20-211c-4f9e-b98d-ec88e2faf1cd
+2026-04-21 18:52:58.149  INFO 421264 --- [nio-8080-exec-6] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+2026-04-21 18:52:58.752  INFO 421264 --- [nio-8080-exec-2] com.qj.back.utils.JwtUtil                : éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3Njg3NzQsImV4cCI6MTc3Njg1NTE3NH0.HHrq4RxRZxyI9CKV8yKR6AYnQ-Nfkj-RQM8ijxibSJY
+×¼±¸Ïò 1 ¸ö¿Í»§¶Ë·¢ËÍÏûÏ¢: {"id":380,"name":"ÉòÑÅÈãlumi557","password":null,"phoneNumber":null,"description":"","status":1,"type":4,"sortOrder":3,"supportedAccountTypes":null,"accountTypeStatus":null,"countNormal":11,"orderStatusNormal":1,"waitingNormal":0,"countSem":0,"orderStatusSem":1,"waitingSem":1,"countSingle1":0,"orderStatusSingle1":1,"waitingSingle1":0}
+³É¹¦·¢ËÍÏûÏ¢µ½ sessionId=a8d6df20-211c-4f9e-b98d-ec88e2faf1cd
+2026-04-21 18:52:58.774  INFO 421264 --- [nio-8080-exec-9] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+2026-04-21 18:52:59.337  INFO 421264 --- [io-8080-exec-10] com.qj.back.utils.JwtUtil                : éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3Njg3NzQsImV4cCI6MTc3Njg1NTE3NH0.HHrq4RxRZxyI9CKV8yKR6AYnQ-Nfkj-RQM8ijxibSJY
+×¼±¸Ïò 1 ¸ö¿Í»§¶Ë·¢ËÍÏûÏ¢: {"id":380,"name":"ÉòÑÅÈãlumi557","password":null,"phoneNumber":null,"description":"","status":1,"type":4,"sortOrder":3,"supportedAccountTypes":null,"accountTypeStatus":null,"countNormal":11,"orderStatusNormal":1,"waitingNormal":0,"countSem":1,"orderStatusSem":1,"waitingSem":0,"countSingle1":0,"orderStatusSingle1":1,"waitingSingle1":0}
+³É¹¦·¢ËÍÏûÏ¢µ½ sessionId=a8d6df20-211c-4f9e-b98d-ec88e2faf1cd
+2026-04-21 18:52:59.359  INFO 421264 --- [nio-8080-exec-7] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+2026-04-21 18:53:00.013  INFO 421264 --- [nio-8080-exec-1] com.qj.back.utils.JwtUtil                : éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3Njg3NzQsImV4cCI6MTc3Njg1NTE3NH0.HHrq4RxRZxyI9CKV8yKR6AYnQ-Nfkj-RQM8ijxibSJY
+×¼±¸Ïò 1 ¸ö¿Í»§¶Ë·¢ËÍÏûÏ¢: {"id":279,"name":"³Â·¼lumi327","password":null,"phoneNumber":null,"description":"","status":1,"type":4,"sortOrder":4,"supportedAccountTypes":null,"accountTypeStatus":null,"countNormal":11,"orderStatusNormal":1,"waitingNormal":0,"countSem":0,"orderStatusSem":0,"waitingSem":0,"countSingle1":0,"orderStatusSingle1":1,"waitingSingle1":0}
+³É¹¦·¢ËÍÏûÏ¢µ½ sessionId=a8d6df20-211c-4f9e-b98d-ec88e2faf1cd
+2026-04-21 18:53:00.037  INFO 421264 --- [nio-8080-exec-6] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+2026-04-21 18:53:00.461  INFO 421264 --- [nio-8080-exec-8] com.qj.back.utils.JwtUtil                : éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3Njg3NzQsImV4cCI6MTc3Njg1NTE3NH0.HHrq4RxRZxyI9CKV8yKR6AYnQ-Nfkj-RQM8ijxibSJY
+×¼±¸Ïò 1 ¸ö¿Í»§¶Ë·¢ËÍÏûÏ¢: {"id":279,"name":"³Â·¼lumi327","password":null,"phoneNumber":null,"description":"","status":1,"type":4,"sortOrder":4,"supportedAccountTypes":null,"accountTypeStatus":null,"countNormal":11,"orderStatusNormal":1,"waitingNormal":0,"countSem":0,"orderStatusSem":1,"waitingSem":1,"countSingle1":0,"orderStatusSingle1":1,"waitingSingle1":0}
+³É¹¦·¢ËÍÏûÏ¢µ½ sessionId=a8d6df20-211c-4f9e-b98d-ec88e2faf1cd
+2026-04-21 18:53:00.482  INFO 421264 --- [io-8080-exec-10] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+2026-04-21 18:53:00.866  INFO 421264 --- [nio-8080-exec-4] com.qj.back.utils.JwtUtil                : éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3Njg3NzQsImV4cCI6MTc3Njg1NTE3NH0.HHrq4RxRZxyI9CKV8yKR6AYnQ-Nfkj-RQM8ijxibSJY
+×¼±¸Ïò 1 ¸ö¿Í»§¶Ë·¢ËÍÏûÏ¢: {"id":279,"name":"³Â·¼lumi327","password":null,"phoneNumber":null,"description":"","status":1,"type":4,"sortOrder":4,"supportedAccountTypes":null,"accountTypeStatus":null,"countNormal":11,"orderStatusNormal":1,"waitingNormal":0,"countSem":1,"orderStatusSem":1,"waitingSem":0,"countSingle1":0,"orderStatusSingle1":1,"waitingSingle1":0}
+³É¹¦·¢ËÍÏûÏ¢µ½ sessionId=a8d6df20-211c-4f9e-b98d-ec88e2faf1cd
+2026-04-21 18:53:00.888  INFO 421264 --- [nio-8080-exec-3] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+WebSocketÁ¬½ÓÒÑ¹Ø±Õ£¬sessionId=a8d6df20-211c-4f9e-b98d-ec88e2faf1cd
+2026-04-21 18:55:07.351  INFO 421264 --- [nio-8080-exec-4] com.qj.back.utils.JwtUtil                : éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3Njg3NzQsImV4cCI6MTc3Njg1NTE3NH0.HHrq4RxRZxyI9CKV8yKR6AYnQ-Nfkj-RQM8ijxibSJY
+WebSocketÁ¬½ÓÒÑ½¨Á¢£¬sessionId=d13a099f-e8e6-0b38-2668-476ca42db95b
+2026-04-21 18:55:09.344  INFO 421264 --- [nio-8080-exec-7] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+WebSocketÁ¬½ÓÒÑ¹Ø±Õ£¬sessionId=d13a099f-e8e6-0b38-2668-476ca42db95b
+WebSocketÁ¬½ÓÒÑ½¨Á¢£¬sessionId=738f920a-8ade-5dd4-3518-74b74a5c8a4e
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 18:55:09.863  INFO 421264 --- [nio-8080-exec-9] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+WebSocketÁ¬½ÓÒÑ½¨Á¢£¬sessionId=680c3134-3cef-42a7-8588-b4b328124fd5
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 18:57:07.577  INFO 421264 --- [nio-8080-exec-9] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+WebSocketÁ¬½ÓÒÑ¹Ø±Õ£¬sessionId=738f920a-8ade-5dd4-3518-74b74a5c8a4e
+WebSocketÁ¬½ÓÒÑ¹Ø±Õ£¬sessionId=680c3134-3cef-42a7-8588-b4b328124fd5
+WebSocketÁ¬½ÓÒÑ½¨Á¢£¬sessionId=d3aca3ae-e6fa-5b15-4299-645e5b82787e
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:04:49.980  INFO 421264 --- [nio-8080-exec-7] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+WebSocketÁ¬½ÓÒÑ¹Ø±Õ£¬sessionId=d3aca3ae-e6fa-5b15-4299-645e5b82787e
+WebSocketÁ¬½ÓÒÑ½¨Á¢£¬sessionId=74921eec-e49b-531f-9725-67fb2f124122
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:11:37.097  INFO 421264 --- [nio-8080-exec-8] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+WebSocketÁ¬½ÓÒÑ¹Ø±Õ£¬sessionId=74921eec-e49b-531f-9725-67fb2f124122
+WebSocketÁ¬½ÓÒÑ½¨Á¢£¬sessionId=3dcab82a-0ad0-a73b-616c-591fc0a59108
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:11:44.767  INFO 421264 --- [io-8080-exec-10] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+WebSocketÁ¬½ÓÒÑ¹Ø±Õ£¬sessionId=3dcab82a-0ad0-a73b-616c-591fc0a59108
+WebSocketÁ¬½ÓÒÑ½¨Á¢£¬sessionId=26461979-e9cf-34e4-24d0-c71be392dcec
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:11:53.911  INFO 421264 --- [nio-8080-exec-3] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+WebSocketÁ¬½ÓÒÑ¹Ø±Õ£¬sessionId=26461979-e9cf-34e4-24d0-c71be392dcec
+WebSocketÁ¬½ÓÒÑ½¨Á¢£¬sessionId=3d2019b3-5096-ff1d-4222-da2b465efa3a
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:13:31.185  INFO 421264 --- [nio-8080-exec-9] c.q.b.s.Impl.ComplementServiceImpl       : æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}

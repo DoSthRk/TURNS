@@ -1,0 +1,251 @@
+Listening for transport dt_socket at address: 5005
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.6.13)
+
+2026-04-21 19:17:27.812 [main] INFO  com.qj.back.BackApplication [traceId=N/A] - Starting BackApplication using Java 21.0.7 on DoSthRk with PID 381716 (D:\WorkPlace\TURNS\back\target\back-0.0.1-SNAPSHOT.jar started by Administrator in D:\WorkPlace\TURNS)
+2026-04-21 19:17:27.816 [main] INFO  com.qj.back.BackApplication [traceId=N/A] - No active profile set, falling back to 1 default profile: "default"
+2026-04-21 19:17:28.656 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [traceId=N/A] - Tomcat initialized with port(s): 8080 (http)
+2026-04-21 19:17:28.661 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [traceId=N/A] - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-21 19:17:28.662 [main] INFO  org.apache.catalina.core.StandardService [traceId=N/A] - Starting service [Tomcat]
+2026-04-21 19:17:28.662 [main] INFO  org.apache.catalina.core.StandardEngine [traceId=N/A] - Starting Servlet engine: [Apache Tomcat/9.0.68]
+2026-04-21 19:17:28.705 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [traceId=N/A] - Initializing Spring embedded WebApplicationContext
+2026-04-21 19:17:28.705 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [traceId=N/A] - Root WebApplicationContext: initialization completed in 856 ms
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.4.1 
+2026-04-21 19:17:29.068 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper [traceId=N/A] - This primary key of "id" is primitive !ä¸å»ºè®®å¦‚æ­¤è¯·ä½¿ç”¨åŒ…è£…ç±» in Class: "com.qj.back.entity.Advice"
+2026-04-21 19:17:29.070 [main] WARN  c.b.mybatisplus.core.injector.AbstractMethod [traceId=N/A] - [com.qj.back.mapper.AdviceMapper.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2026-04-21 19:17:29.075 [main] WARN  c.b.mybatisplus.core.injector.AbstractMethod [traceId=N/A] - [com.qj.back.mapper.AdviceMapper.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2026-04-21 19:17:29.090 [main] WARN  c.b.mybatisplus.core.injector.AbstractMethod [traceId=N/A] - [com.qj.back.mapper.AdviceMapper.selectList] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.SelectList]
+2026-04-21 19:17:29.180 [main] WARN  c.b.mybatisplus.core.injector.AbstractMethod [traceId=N/A] - [com.qj.back.mapper.ComplementMapper.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2026-04-21 19:17:29.184 [main] WARN  c.b.mybatisplus.core.injector.AbstractMethod [traceId=N/A] - [com.qj.back.mapper.ComplementMapper.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2026-04-21 19:17:29.187 [main] WARN  c.b.mybatisplus.core.injector.AbstractMethod [traceId=N/A] - [com.qj.back.mapper.ComplementMapper.update] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Update]
+2026-04-21 19:17:29.415 [main] INFO  com.zaxxer.hikari.HikariDataSource [traceId=N/A] - HikariPool-1 - Starting...
+2026-04-21 19:17:29.506 [main] INFO  com.zaxxer.hikari.HikariDataSource [traceId=N/A] - HikariPool-1 - Start completed.
+2026-04-21 19:17:29.714 [main] INFO  c.q.back.service.Impl.ShiftModuleConfigServiceImpl [traceId=N/A] - Initialized default shift module configs
+2026-04-21 19:17:29.853 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping [traceId=N/A] - Adding welcome page: class path resource [static/index.html]
+2026-04-21 19:17:29.917 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [traceId=N/A] - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-21 19:17:29.931 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [traceId=N/A] - Tomcat started on port(s): 8080 (http) with context path ''
+2026-04-21 19:17:29.936 [main] INFO  com.qj.back.BackApplication [traceId=N/A] - Started BackApplication in 2.543 seconds (JVM running for 2.84)
+2026-04-21 19:17:31.715 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [traceId=N/A] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-21 19:17:31.715 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet [traceId=N/A] - Initializing Servlet 'dispatcherServlet'
+2026-04-21 19:17:31.715 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet [traceId=N/A] - Completed initialization in 0 ms
+2026-04-21 19:17:31.766 [http-nio-8080-exec-1] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=767c0701-0449-94dc-3877-d3200eac56b8, activeSessions=1
+2026-04-21 19:17:43.946 [http-nio-8080-exec-2] INFO  com.qj.back.utils.JwtUtil [traceId=e53fbc648223419fa66e3461f2d5fcb4] - éªŒè¯token: dummy
+2026-04-21 19:17:43.960 [http-nio-8080-exec-2] ERROR com.qj.back.utils.JwtUtil [traceId=e53fbc648223419fa66e3461f2d5fcb4] - tokenéªŒè¯å¤±è´¥
+io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period characters. Found: 0
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:275)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:529)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:589)
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173)
+	at com.qj.back.utils.JwtUtil.validateToken(JwtUtil.java:34)
+	at com.qj.back.controller.ShiftModuleConfigController.verifyAdmin(ShiftModuleConfigController.java:79)
+	at com.qj.back.controller.ShiftModuleConfigController.saveConfigsByType(ShiftModuleConfigController.java:55)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.qj.back.config.TraceIdFilter.doFilterInternal(TraceIdFilter.java:30)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-04-21 19:18:10.170 [http-nio-8080-exec-4] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=767c0701-0449-94dc-3877-d3200eac56b8, status=CloseStatus[code=1001, reason=null], activeSessions=0
+2026-04-21 19:18:10.537 [http-nio-8080-exec-5] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=405ddeec-1580-90c2-d9f9-24f7bc8e5a6f, activeSessions=1
+2026-04-21 19:18:10.555 [http-nio-8080-exec-10] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=c98378bb1b30483487a91aa8ad5a6ec5] - æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 19:18:16.793 [http-nio-8080-exec-5] INFO  com.qj.back.utils.JwtUtil [traceId=aa8ee3e851d344fe87fc8b0d64d8e881] - éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3Njg3NzQsImV4cCI6MTc3Njg1NTE3NH0.HHrq4RxRZxyI9CKV8yKR6AYnQ-Nfkj-RQM8ijxibSJY
+2026-04-21 19:18:16.799 [http-nio-8080-exec-5] ERROR com.qj.back.utils.JwtUtil [traceId=aa8ee3e851d344fe87fc8b0d64d8e881] - tokenéªŒè¯å¤±è´¥
+io.jsonwebtoken.security.SignatureException: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:399)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:529)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:589)
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173)
+	at com.qj.back.utils.JwtUtil.validateToken(JwtUtil.java:34)
+	at com.qj.back.controller.ShiftModuleConfigController.verifyAdmin(ShiftModuleConfigController.java:79)
+	at com.qj.back.controller.ShiftModuleConfigController.saveConfigsByType(ShiftModuleConfigController.java:55)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.qj.back.config.TraceIdFilter.doFilterInternal(TraceIdFilter.java:30)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-04-21 19:18:16.806 [http-nio-8080-exec-6] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=405ddeec-1580-90c2-d9f9-24f7bc8e5a6f, status=CloseStatus[code=1000, reason=null], activeSessions=0
+2026-04-21 19:18:24.409 [http-nio-8080-exec-7] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=1f251aee-ecac-f9e7-4c70-f99e726f836d, activeSessions=1
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:18:24.416 [http-nio-8080-exec-5] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=7bdc3ed782bf4592b289918f12b10b9e] - æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 19:18:33.814 [http-nio-8080-exec-9] INFO  com.qj.back.utils.JwtUtil [traceId=d41ac6e6857c41f48a44c5f220f3cbd8] - éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzAzMDQsImV4cCI6MTc3Njg1NjcwNH0.zx-o6VjmKppB_yhqQaLS472ax4ZuhzuvIqGZ_GsD1EU
+2026-04-21 19:18:36.238 [http-nio-8080-exec-7] INFO  com.qj.back.utils.JwtUtil [traceId=e497693ebe7b48e2b238a4062c207732] - éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzAzMDQsImV4cCI6MTc3Njg1NjcwNH0.zx-o6VjmKppB_yhqQaLS472ax4ZuhzuvIqGZ_GsD1EU
+2026-04-21 19:18:39.849 [http-nio-8080-exec-10] INFO  com.qj.back.utils.JwtUtil [traceId=8c0c332395e14b8c8e0c3baec15b94c0] - éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzAzMDQsImV4cCI6MTc3Njg1NjcwNH0.zx-o6VjmKppB_yhqQaLS472ax4ZuhzuvIqGZ_GsD1EU
+2026-04-21 19:18:42.657 [http-nio-8080-exec-1] INFO  com.qj.back.utils.JwtUtil [traceId=be0eeca7f08440cfaafe4e5606221c90] - éªŒè¯token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLpkrHov5siLCJpYXQiOjE3NzY3NzAzMDQsImV4cCI6MTc3Njg1NjcwNH0.zx-o6VjmKppB_yhqQaLS472ax4ZuhzuvIqGZ_GsD1EU
+2026-04-21 19:21:21.883 [http-nio-8080-exec-3] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=1f251aee-ecac-f9e7-4c70-f99e726f836d, status=CloseStatus[code=1001, reason=null], activeSessions=0
+2026-04-21 19:21:22.172 [http-nio-8080-exec-6] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=883767ad-c196-c6f8-04b9-252c93b700af, activeSessions=1
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:21:22.184 [http-nio-8080-exec-2] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=b66dfa578cda4d14889ef9aa67e853b3] - æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 19:22:01.746 [http-nio-8080-exec-3] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=883767ad-c196-c6f8-04b9-252c93b700af, status=CloseStatus[code=1000, reason=null], activeSessions=0
+2026-04-21 19:22:02.894 [http-nio-8080-exec-9] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=9fd7feee-7dcf-027d-6e3f-5be6b4dfebe7, activeSessions=1
+2026-04-21 19:22:02.899 [http-nio-8080-exec-3] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=e6570a60acc349d1baf758fe190d24b1] - æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 19:25:15.524 [http-nio-8080-exec-2] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=9fd7feee-7dcf-027d-6e3f-5be6b4dfebe7, status=CloseStatus[code=1001, reason=null], activeSessions=0
+2026-04-21 19:25:15.726 [http-nio-8080-exec-8] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=dacc29c4-9025-8a4c-32eb-abbf93671c0e, activeSessions=1
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:25:15.736 [http-nio-8080-exec-7] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=e77ae2c606f843178427a7d77124d15a] - æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 19:25:17.260 [http-nio-8080-exec-2] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=dacc29c4-9025-8a4c-32eb-abbf93671c0e, status=CloseStatus[code=1001, reason=null], activeSessions=0
+2026-04-21 19:25:17.508 [http-nio-8080-exec-8] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=e42d36d8-01df-28ea-b83f-c7e447d92e33, activeSessions=1
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:25:17.515 [http-nio-8080-exec-10] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=91aa52b0ba60400b810041558e5577e6] - æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 19:36:53.864 [http-nio-8080-exec-5] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=e42d36d8-01df-28ea-b83f-c7e447d92e33, status=CloseStatus[code=1001, reason=null], activeSessions=0
+2026-04-21 19:36:54.190 [http-nio-8080-exec-6] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=c375449e-c511-1cfa-ed6f-6bc6b94b1c52, activeSessions=1
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:36:54.206 [http-nio-8080-exec-4] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=5a3c7143bee9496894117ec32384ee46] - æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 19:38:55.710 [http-nio-8080-exec-2] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=c375449e-c511-1cfa-ed6f-6bc6b94b1c52, status=CloseStatus[code=1001, reason=null], activeSessions=0
+2026-04-21 19:38:55.840 [http-nio-8080-exec-5] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=3c47eed4-55ad-cefb-466a-ed315218a387, activeSessions=1
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:38:55.852 [http-nio-8080-exec-2] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=d6a543e163484fa2beec606e30a087b1] - æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+2026-04-21 19:39:43.716 [http-nio-8080-exec-1] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket closed, sessionId=3c47eed4-55ad-cefb-466a-ed315218a387, status=CloseStatus[code=1001, reason=null], activeSessions=0
+2026-04-21 19:39:43.839 [http-nio-8080-exec-5] INFO  com.qj.back.Handler.MyWebSocketHandler [traceId=N/A] - WebSocket connected, sessionId=75820b38-7a09-6537-0421-675bf5b79893, activeSessions=1
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+2026-04-21 19:39:43.850 [http-nio-8080-exec-1] INFO  com.qj.back.service.Impl.ComplementServiceImpl [traceId=e8a122b012dc4db99db7b1d749a57aa3] - æŸ¥è¯¢æ‰€æœ‰è¡¥å……é¡¾é—®
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
+»ñÈ¡¹ËÎÊÁĞ±íÇëÇó
+Êı¾İ¿â·µ»Ø¹ËÎÊÊıÁ¿: 158
+µÚÒ»Ìõ¹ËÎÊÊı¾İ: {"id":5,"name":"ÕÅÓî157","description":"Éú²¡Çë¼Ù£¬»Ö¸´Ê±¼ä´ı¶¨","status":2,"type":1,"sortOrder":7,"countNormal":14,"orderStatusNormal":1,"waitingNormal":0,"countSem":4,"orderStatusSem":1,"waitingSem":0,"countSingle1":7,"orderStatusSingle1":1,"waitingSingle1":0}
